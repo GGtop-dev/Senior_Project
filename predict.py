@@ -1,4 +1,4 @@
-"""Run the trained YOLOv8 model, save annotated images, and print per-class counts.
+"""Run the trained YOLOv11 model, save annotated images, and print per-class counts.
 
 Defaults to the 20% test split (Dataset/test/images).
 
@@ -15,7 +15,7 @@ from pathlib import Path
 from ultralytics import YOLO
 
 ROOT = Path(__file__).resolve().parent
-DEFAULT_WEIGHTS = ROOT / "runs" / "ppe_yolov8" / "weights" / "best.pt"
+DEFAULT_WEIGHTS = ROOT / "runs" / "ppe_yolov11" / "weights" / "best.pt"
 DEFAULT_SOURCE = ROOT / "Dataset" / "test" / "images"
 
 

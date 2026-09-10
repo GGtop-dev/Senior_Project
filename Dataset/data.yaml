@@ -1,4 +1,4 @@
-path: C:/Senior_Project_muYolov8/Senior_Project/Dataset
+path: /Users/suchanyan/Senior_Project/Dataset
 train: train/images
 val: test/images
 test: test/images

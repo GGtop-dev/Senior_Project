@@ -1,4 +1,4 @@
-"""Write a YOLOv8 data.yaml for the pre-split dataset (train 80% / test 20%).
+"""Write a YOLOv11 data.yaml for the pre-split dataset (train 80% / test 20%).
 
 Dataset/ is already split into train/ and test/ (see the "แบ่ง Dataset train,test"
 commit), so this script no longer re-splits anything. It only:
@@ -7,6 +7,8 @@ commit), so this script no longer re-splits anything. It only:
   * (re)writes Dataset/data.yaml with an absolute path and val -> test.
 
 The original Dataset/ files are never modified except data.yaml itself.
+This data.yaml format is shared by YOLOv8 and YOLOv11 (ultralytics), so no
+other changes were needed here when moving from v8 to v11.
 
 Usage:
     python prepare_dataset.py
