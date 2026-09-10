@@ -1,13 +1,12 @@
-train: ../train/images
-val: ../valid/images
-test: ../test/images
-
-nc: 7
-names: ['Gloves', 'Helmet', 'Mask', 'Protective apron', 'Safety Shoes', 'Sleeve', 'gloves']
-
-roboflow:
-  workspace: bumble-njujz
-  project: detect-count-and-visualize-object-detection-lcciq
-  version: 1
-  license: CC BY 4.0
-  url: https://universe.roboflow.com/bumble-njujz/detect-count-and-visualize-object-detection-lcciq/dataset/1
+path: C:/Users/User/Downloads/Senior_Project_Agian/Dataset_split
+train: train/images
+val: test/images
+test: test/images
+nc: 6
+names:
+  0: Gloves
+  1: Helmet
+  2: Mask
+  3: Protective apron
+  4: Safety Shoes
+  5: Sleeve
