@@ -1,90 +1,73 @@
-"""Split Dataset/train into train/val(/test) and write a YOLOv8 data.yaml.
+"""Write a YOLOv8 data.yaml for the pre-split dataset (train 80% / test 20%).
 
-The Roboflow export only contains a train split, and its data.yaml points to
-valid/ and test/ folders that don't exist. This script copies the images and
-labels into Dataset_split/ (the original Dataset/ folder is never modified).
+Dataset/ is already split into train/ and test/ (see the "แบ่ง Dataset train,test"
+commit), so this script no longer re-splits anything. It only:
+  * checks the train/ and test/ image+label folders exist and line up,
+  * warns about label rows whose class id is outside 0..nc-1,
+  * (re)writes Dataset/data.yaml with an absolute path and val -> test.
+
+The original Dataset/ files are never modified except data.yaml itself.
 
 Usage:
-    python prepare_dataset.py                # 80% train / 20% val
-    python prepare_dataset.py --test 0.1     # 70% train / 20% val / 10% test
+    python prepare_dataset.py
 """
 import argparse
-import random
-import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-SRC = ROOT / "Dataset" / "train"
-OUT = ROOT / "Dataset_split"
-DATA_YAML = OUT / "data.yaml"
+DATASET = ROOT / "Dataset"
+DATA_YAML = DATASET / "data.yaml"
 
-# Class names from Dataset/data.yaml (index = class id)
-NAMES = ["Gloves", "Helmet", "Mask", "Protective apron", "Safety Shoes", "Sleeve", "gloves"]
-DUPLICATE_GLOVES_ID = 6  # 'gloves' is the same object as 'Gloves' (id 0)
+# Class names (index = class id). Matches Dataset/data.yaml.
+NAMES = ["Gloves", "Helmet", "Mask", "Protective apron", "Safety Shoes", "Sleeve"]
 IMG_EXTS = {".jpg", ".jpeg", ".png", ".bmp", ".webp"}
+SPLITS = ("train", "test")
+
+
+def check_split(name: str) -> int:
+    img_dir = DATASET / name / "images"
+    lbl_dir = DATASET / name / "labels"
+    if not img_dir.is_dir() or not lbl_dir.is_dir():
+        raise SystemExit(f"missing {img_dir} or {lbl_dir}")
+
+    images = [p for p in sorted(img_dir.iterdir()) if p.suffix.lower() in IMG_EXTS]
+    if not images:
+        raise SystemExit(f"no images in {img_dir}")
+
+    for img in images:
+        lbl = lbl_dir / f"{img.stem}.txt"
+        if not lbl.exists():
+            print(f"[warn] {name}: no label for {img.name}")
+            continue
+        for i, line in enumerate(lbl.read_text().splitlines(), 1):
+            parts = line.split()
+            if not parts:
+                continue
+            cid = int(parts[0])
+            if not 0 <= cid < len(NAMES):
+                print(f"[warn] {lbl.name}:{i} class id {cid} outside 0..{len(NAMES) - 1}")
+    return len(images)
 
 
 def main():
-    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--val", type=float, default=0.2, help="fraction of images for validation")
-    ap.add_argument("--test", type=float, default=0.0, help="fraction of images for test")
-    ap.add_argument("--seed", type=int, default=42, help="random seed for the split")
-    ap.add_argument("--keep-duplicate-gloves", action="store_true",
-                    help="keep 'gloves' (id 6) as its own class instead of merging it into 'Gloves' (id 0)")
-    args = ap.parse_args()
+    argparse.ArgumentParser(description=__doc__,
+                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
 
-    merge = not args.keep_duplicate_gloves
-    names = NAMES[:DUPLICATE_GLOVES_ID] if merge else NAMES
+    counts = {s: check_split(s) for s in SPLITS}
+    total = sum(counts.values())
+    for s in SPLITS:
+        print(f"{s:5s}: {counts[s]:4d} images ({counts[s] / total * 100:.1f}%)")
 
-    pairs = []
-    for img in sorted((SRC / "images").iterdir()):
-        if img.suffix.lower() not in IMG_EXTS:
-            continue
-        lbl = SRC / "labels" / f"{img.stem}.txt"
-        if lbl.exists():
-            pairs.append((img, lbl))
-        else:
-            print(f"[skip] no label for {img.name}")
-
-    random.Random(args.seed).shuffle(pairs)
-    n_test = round(len(pairs) * args.test)
-    n_val = round(len(pairs) * args.val)
-    splits = {
-        "train": pairs[n_test + n_val:],
-        "val": pairs[n_test:n_test + n_val],
-        "test": pairs[:n_test],
-    }
-
-    if OUT.exists():
-        shutil.rmtree(OUT)
-
-    for split, items in splits.items():
-        if not items:
-            continue
-        (OUT / split / "images").mkdir(parents=True)
-        (OUT / split / "labels").mkdir(parents=True)
-        for img, lbl in items:
-            shutil.copy2(img, OUT / split / "images" / img.name)
-            lines = []
-            for line in lbl.read_text().splitlines():
-                parts = line.split()
-                if not parts:
-                    continue
-                if merge and int(parts[0]) == DUPLICATE_GLOVES_ID:
-                    parts[0] = "0"
-                lines.append(" ".join(parts))
-            (OUT / split / "labels" / lbl.name).write_text("\n".join(lines) + "\n")
-        print(f"{split:5s}: {len(items)} images")
-
-    yaml_lines = [f"path: {OUT.as_posix()}", "train: train/images", "val: val/images"]
-    if splits["test"]:
-        yaml_lines.append("test: test/images")
-    yaml_lines.append(f"nc: {len(names)}")
-    yaml_lines.append("names:")
-    yaml_lines += [f"  {i}: {name}" for i, name in enumerate(names)]
+    yaml_lines = [
+        f"path: {DATASET.as_posix()}",
+        "train: train/images",
+        "val: test/images",   # no separate val split -> validate on the test set
+        "test: test/images",
+        f"nc: {len(NAMES)}",
+        "names:",
+        *[f"  {i}: {name}" for i, name in enumerate(NAMES)],
+    ]
     DATA_YAML.write_text("\n".join(yaml_lines) + "\n")
-
-    print(f"classes: {names}")
     print(f"wrote {DATA_YAML}")
 
 

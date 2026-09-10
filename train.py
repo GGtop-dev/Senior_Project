@@ -1,4 +1,7 @@
-"""Train YOLOv8 on the prepared dataset (run prepare_dataset.py first).
+"""Train YOLOv8 on the pre-split dataset: train 80% / test 20%.
+
+Run prepare_dataset.py first to generate Dataset/data.yaml. Validation during
+training runs on the test split (data.yaml maps val -> test/images).
 
 Usage:
     python train.py
@@ -11,7 +14,7 @@ from pathlib import Path
 from ultralytics import YOLO
 
 ROOT = Path(__file__).resolve().parent
-DATA_YAML = ROOT / "Dataset_split" / "data.yaml"
+DATA_YAML = ROOT / "Dataset" / "data.yaml"
 
 
 def main():
@@ -42,6 +45,10 @@ def main():
         plots=True,
     )
     print(f"best weights: {model.trainer.best}")
+
+    # final evaluation on the 20% test split
+    metrics = model.val(data=str(DATA_YAML), split="test", device=args.device)
+    print(f"test  mAP50: {metrics.box.map50:.4f}  mAP50-95: {metrics.box.map:.4f}")
 
 
 if __name__ == "__main__":  # required on Windows for dataloader workers

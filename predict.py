@@ -1,6 +1,9 @@
 """Run the trained YOLOv8 model, save annotated images, and print per-class counts.
 
+Defaults to the 20% test split (Dataset/test/images).
+
 Usage:
+    python predict.py                            # -> Dataset/test/images
     python predict.py --source path/to/image.jpg
     python predict.py --source path/to/folder
     python predict.py --source 0 --show          # webcam
@@ -13,11 +16,13 @@ from ultralytics import YOLO
 
 ROOT = Path(__file__).resolve().parent
 DEFAULT_WEIGHTS = ROOT / "runs" / "ppe_yolov8" / "weights" / "best.pt"
+DEFAULT_SOURCE = ROOT / "Dataset" / "test" / "images"
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--source", required=True, help="image, folder, video, or webcam index")
+    ap.add_argument("--source", default=str(DEFAULT_SOURCE),
+                    help="image, folder, video, or webcam index (default: Dataset/test/images)")
     ap.add_argument("--weights", default=str(DEFAULT_WEIGHTS))
     ap.add_argument("--conf", type=float, default=0.25, help="confidence threshold")
     ap.add_argument("--imgsz", type=int, default=640)

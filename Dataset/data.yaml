@@ -1,4 +1,4 @@
-path: C:/Users/User/Downloads/Senior_Project_Agian/Dataset_split
+path: C:/Senior_Project_muYolov8/Senior_Project/Dataset
 train: train/images
 val: test/images
 test: test/images
