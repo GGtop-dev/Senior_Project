@@ -3,8 +3,12 @@
 Run prepare_dataset.py first to generate Dataset/data.yaml. Validation during
 training runs on the test split (data.yaml maps val -> test/images).
 
+Early stopping is OFF by default (--patience 0), so it always runs the full
+--epochs. best.pt is still whichever epoch had the best val mAP.
+
 Usage:
     python train.py
+    python train.py --epochs 200
     python train.py --model yolov8s.pt --epochs 150 --batch 8
     python train.py --device cpu
 """
@@ -26,6 +30,8 @@ def main():
     ap.add_argument("--batch", type=int, default=16, help="lower this if you run out of GPU memory")
     ap.add_argument("--device", default=None, help="'0' for first GPU, 'cpu', or leave empty for auto")
     ap.add_argument("--name", default="ppe_yolov8", help="run folder name under runs/")
+    ap.add_argument("--patience", type=int, default=0,
+                    help="early-stop patience; 0 = disabled, run all --epochs")
     args = ap.parse_args()
 
     if not DATA_YAML.exists():
@@ -38,7 +44,7 @@ def main():
         imgsz=args.imgsz,
         batch=args.batch,
         device=args.device,
-        patience=30,  # stop early if val mAP doesn't improve for 30 epochs
+        patience=args.patience,  # 0 = no early stop, always run all epochs
         project=str(ROOT / "runs"),
         name=args.name,
         exist_ok=True,
