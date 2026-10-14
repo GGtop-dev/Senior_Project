@@ -1,0 +1,157 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Protective apron",
+      "score": null,
+      "points": [
+        [
+          1262.0,
+          1461.6521739130433
+        ],
+        [
+          1692.4347826086955,
+          1461.6521739130433
+        ],
+        [
+          1692.4347826086955,
+          2422.521739130435
+        ],
+        [
+          1262.0,
+          2422.521739130435
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Helmet",
+      "score": null,
+      "points": [
+        [
+          1344.608695652174,
+          1035.5652173913043
+        ],
+        [
+          1575.0434782608695,
+          1035.5652173913043
+        ],
+        [
+          1575.0434782608695,
+          1192.086956521739
+        ],
+        [
+          1344.608695652174,
+          1192.086956521739
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Safety Shoes",
+      "score": null,
+      "points": [
+        [
+          1331.565217391304,
+          2966.0
+        ],
+        [
+          1475.0434782608695,
+          2966.0
+        ],
+        [
+          1475.0434782608695,
+          3118.1739130434785
+        ],
+        [
+          1331.565217391304,
+          3118.1739130434785
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Safety Shoes",
+      "score": null,
+      "points": [
+        [
+          1522.869565217391,
+          2966.0
+        ],
+        [
+          1688.086956521739,
+          2966.0
+        ],
+        [
+          1688.086956521739,
+          3122.521739130435
+        ],
+        [
+          1522.869565217391,
+          3122.521739130435
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Non-jeans pants",
+      "score": null,
+      "points": [
+        [
+          1270.695652173913,
+          2409.4782608695655
+        ],
+        [
+          1683.7391304347825,
+          2409.4782608695655
+        ],
+        [
+          1683.7391304347825,
+          2957.304347826087
+        ],
+        [
+          1270.695652173913,
+          2957.304347826087
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "IMG_8178.jpg",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024,
+  "description": ""
+}

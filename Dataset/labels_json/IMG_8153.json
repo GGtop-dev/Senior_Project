@@ -1,0 +1,127 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Helmet",
+      "score": null,
+      "points": [
+        [
+          1676.3750000000005,
+          771.6250000000002
+        ],
+        [
+          2213.8750000000005,
+          771.6250000000002
+        ],
+        [
+          2213.8750000000005,
+          1096.6250000000002
+        ],
+        [
+          1676.3750000000005,
+          1096.6250000000002
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Gloves",
+      "score": null,
+      "points": [
+        [
+          2588.8750000000005,
+          3146.625
+        ],
+        [
+          2895.1250000000005,
+          3146.625
+        ],
+        [
+          2895.1250000000005,
+          3727.875
+        ],
+        [
+          2588.8750000000005,
+          3727.875
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Gloves",
+      "score": null,
+      "points": [
+        [
+          1295.1250000000005,
+          3309.125
+        ],
+        [
+          1670.1250000000005,
+          3309.125
+        ],
+        [
+          1670.1250000000005,
+          3752.875
+        ],
+        [
+          1295.1250000000005,
+          3752.875
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Jeans",
+      "score": null,
+      "points": [
+        [
+          1601.3750000000005,
+          3296.625
+        ],
+        [
+          2563.8750000000005,
+          3296.625
+        ],
+        [
+          2563.8750000000005,
+          5240.375
+        ],
+        [
+          1601.3750000000005,
+          5240.375
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "..\\src_images\\IMG_8153.jpg",
+  "imageData": null,
+  "imageHeight": 5712,
+  "imageWidth": 4284
+}

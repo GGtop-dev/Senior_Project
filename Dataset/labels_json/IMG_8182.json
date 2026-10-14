@@ -1,0 +1,128 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Protective apron",
+      "score": null,
+      "points": [
+        [
+          1595.1250000000005,
+          1452.8750000000002
+        ],
+        [
+          2570.1250000000005,
+          1452.8750000000002
+        ],
+        [
+          2570.1250000000005,
+          3927.875
+        ],
+        [
+          1595.1250000000005,
+          3927.875
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Safety Shoes",
+      "score": null,
+      "points": [
+        [
+          1657.6250000000005,
+          5252.875
+        ],
+        [
+          2095.1250000000005,
+          5252.875
+        ],
+        [
+          2095.1250000000005,
+          5609.125
+        ],
+        [
+          1657.6250000000005,
+          5609.125
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Safety Shoes",
+      "score": null,
+      "points": [
+        [
+          2107.6250000000005,
+          5359.125
+        ],
+        [
+          2638.8750000000005,
+          5359.125
+        ],
+        [
+          2638.8750000000005,
+          5621.625
+        ],
+        [
+          2107.6250000000005,
+          5621.625
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Non-jeans pants",
+      "score": null,
+      "points": [
+        [
+          1607.6250000000005,
+          3977.875
+        ],
+        [
+          2613.8750000000005,
+          3977.875
+        ],
+        [
+          2613.8750000000005,
+          5352.875
+        ],
+        [
+          1607.6250000000005,
+          5352.875
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "IMG_8182.jpg",
+  "imageData": null,
+  "imageHeight": 5712,
+  "imageWidth": 4284,
+  "description": ""
+}

@@ -1,0 +1,70 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Mask",
+      "score": null,
+      "points": [
+        [
+          1801.3750000000005,
+          1077.8750000000002
+        ],
+        [
+          2320.1250000000005,
+          1077.8750000000002
+        ],
+        [
+          2320.1250000000005,
+          1427.8750000000002
+        ],
+        [
+          1801.3750000000005,
+          1427.8750000000002
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Non-jeans pants",
+      "score": null,
+      "points": [
+        [
+          1551.3750000000005,
+          3527.875
+        ],
+        [
+          2676.3750000000005,
+          3527.875
+        ],
+        [
+          2676.3750000000005,
+          5277.875
+        ],
+        [
+          1551.3750000000005,
+          5277.875
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "IMG_8157.jpg",
+  "imageData": null,
+  "imageHeight": 5712,
+  "imageWidth": 4284,
+  "description": ""
+}

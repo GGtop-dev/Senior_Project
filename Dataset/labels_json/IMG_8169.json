@@ -1,0 +1,40 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Non-jeans pants",
+      "score": null,
+      "points": [
+        [
+          1538.8750000000005,
+          3646.625
+        ],
+        [
+          2495.1250000000005,
+          3646.625
+        ],
+        [
+          2495.1250000000005,
+          5177.875
+        ],
+        [
+          1538.8750000000005,
+          5177.875
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "..\\src_images\\IMG_8169.jpg",
+  "imageData": null,
+  "imageHeight": 5712,
+  "imageWidth": 4284
+}

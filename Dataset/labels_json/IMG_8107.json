@@ -1,0 +1,185 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Helmet",
+      "score": null,
+      "points": [
+        [
+          1392.4347826086955,
+          1274.695652173913
+        ],
+        [
+          1622.869565217391,
+          1274.695652173913
+        ],
+        [
+          1622.869565217391,
+          1422.5217391304348
+        ],
+        [
+          1392.4347826086955,
+          1422.5217391304348
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Mask",
+      "score": null,
+      "points": [
+        [
+          1427.2173913043475,
+          1496.4347826086955
+        ],
+        [
+          1609.8260869565215,
+          1496.4347826086955
+        ],
+        [
+          1609.8260869565215,
+          1618.173913043478
+        ],
+        [
+          1427.2173913043475,
+          1618.173913043478
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Sleeve",
+      "score": null,
+      "points": [
+        [
+          1235.9130434782605,
+          1661.6521739130433
+        ],
+        [
+          1801.1304347826085,
+          1661.6521739130433
+        ],
+        [
+          1801.1304347826085,
+          2361.6521739130435
+        ],
+        [
+          1235.9130434782605,
+          2361.6521739130435
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Gloves",
+      "score": null,
+      "points": [
+        [
+          1196.782608695652,
+          2352.9565217391305
+        ],
+        [
+          1314.173913043478,
+          2352.9565217391305
+        ],
+        [
+          1314.173913043478,
+          2539.913043478261
+        ],
+        [
+          1196.782608695652,
+          2539.913043478261
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Gloves",
+      "score": null,
+      "points": [
+        [
+          1705.478260869565,
+          2348.608695652174
+        ],
+        [
+          1796.782608695652,
+          2348.608695652174
+        ],
+        [
+          1796.782608695652,
+          2522.521739130435
+        ],
+        [
+          1705.478260869565,
+          2522.521739130435
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Jeans",
+      "score": null,
+      "points": [
+        [
+          1309.8260869565215,
+          2431.217391304348
+        ],
+        [
+          1688.086956521739,
+          2431.217391304348
+        ],
+        [
+          1688.086956521739,
+          3274.695652173913
+        ],
+        [
+          1309.8260869565215,
+          3274.695652173913
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "..\\src_images\\IMG_8107.jpg",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024
+}

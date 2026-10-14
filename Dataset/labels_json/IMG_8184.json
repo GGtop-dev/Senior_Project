@@ -1,0 +1,128 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Protective apron",
+      "score": null,
+      "points": [
+        [
+          1257.6521739130435,
+          1500.782608695652
+        ],
+        [
+          1688.086956521739,
+          1500.782608695652
+        ],
+        [
+          1688.086956521739,
+          2405.130434782609
+        ],
+        [
+          1257.6521739130435,
+          2405.130434782609
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Safety Shoes",
+      "score": null,
+      "points": [
+        [
+          1305.478260869565,
+          3000.782608695652
+        ],
+        [
+          1457.6521739130435,
+          3000.782608695652
+        ],
+        [
+          1457.6521739130435,
+          3126.8695652173915
+        ],
+        [
+          1305.478260869565,
+          3126.8695652173915
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Safety Shoes",
+      "score": null,
+      "points": [
+        [
+          1505.478260869565,
+          3000.782608695652
+        ],
+        [
+          1740.260869565217,
+          3000.782608695652
+        ],
+        [
+          1740.260869565217,
+          3179.0434782608695
+        ],
+        [
+          1505.478260869565,
+          3179.0434782608695
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Non-jeans pants",
+      "score": null,
+      "points": [
+        [
+          1275.0434782608695,
+          2405.130434782609
+        ],
+        [
+          1670.695652173913,
+          2405.130434782609
+        ],
+        [
+          1670.695652173913,
+          3000.782608695652
+        ],
+        [
+          1275.0434782608695,
+          3000.782608695652
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "IMG_8184.jpg",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024,
+  "description": ""
+}

@@ -1,0 +1,128 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Helmet",
+      "score": null,
+      "points": [
+        [
+          1305.478260869565,
+          1044.2608695652173
+        ],
+        [
+          1609.8260869565215,
+          1044.2608695652173
+        ],
+        [
+          1609.8260869565215,
+          1174.695652173913
+        ],
+        [
+          1305.478260869565,
+          1174.695652173913
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Safety Shoes",
+      "score": null,
+      "points": [
+        [
+          1322.869565217391,
+          2974.695652173913
+        ],
+        [
+          1501.1304347826085,
+          2974.695652173913
+        ],
+        [
+          1501.1304347826085,
+          3183.391304347826
+        ],
+        [
+          1322.869565217391,
+          3183.391304347826
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Safety Shoes",
+      "score": null,
+      "points": [
+        [
+          1488.086956521739,
+          2979.0434782608695
+        ],
+        [
+          1662.0,
+          2979.0434782608695
+        ],
+        [
+          1662.0,
+          3135.5652173913045
+        ],
+        [
+          1488.086956521739,
+          3135.5652173913045
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Non-jeans pants",
+      "score": null,
+      "points": [
+        [
+          1244.608695652174,
+          2361.6521739130435
+        ],
+        [
+          1701.1304347826085,
+          2361.6521739130435
+        ],
+        [
+          1701.1304347826085,
+          2974.695652173913
+        ],
+        [
+          1244.608695652174,
+          2974.695652173913
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "IMG_8176.jpg",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024,
+  "description": ""
+}

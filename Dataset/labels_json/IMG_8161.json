@@ -1,0 +1,99 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Helmet",
+      "score": null,
+      "points": [
+        [
+          1340.2608695652175,
+          1074.695652173913
+        ],
+        [
+          1557.6521739130435,
+          1074.695652173913
+        ],
+        [
+          1557.6521739130435,
+          1205.1304347826085
+        ],
+        [
+          1340.2608695652175,
+          1205.1304347826085
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Mask",
+      "score": null,
+      "points": [
+        [
+          1370.695652173913,
+          1296.4347826086955
+        ],
+        [
+          1575.0434782608695,
+          1296.4347826086955
+        ],
+        [
+          1575.0434782608695,
+          1439.9130434782608
+        ],
+        [
+          1370.695652173913,
+          1439.9130434782608
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Non-jeans pants",
+      "score": null,
+      "points": [
+        [
+          1275.0434782608695,
+          2309.4782608695655
+        ],
+        [
+          1683.7391304347825,
+          2309.4782608695655
+        ],
+        [
+          1683.7391304347825,
+          2931.217391304348
+        ],
+        [
+          1275.0434782608695,
+          2931.217391304348
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "IMG_8161.jpg",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024,
+  "description": ""
+}

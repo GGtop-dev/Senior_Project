@@ -1,0 +1,40 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Jeans",
+      "score": null,
+      "points": [
+        [
+          1645.1250000000005,
+          3340.375
+        ],
+        [
+          2657.6250000000005,
+          3340.375
+        ],
+        [
+          2657.6250000000005,
+          5065.375
+        ],
+        [
+          1645.1250000000005,
+          5065.375
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "..\\src_images\\IMG_8145.jpg",
+  "imageData": null,
+  "imageHeight": 5712,
+  "imageWidth": 4284
+}
