@@ -1,0 +1,214 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Protective apron",
+      "score": null,
+      "points": [
+        [
+          1218.5217391304345,
+          1335.5652173913043
+        ],
+        [
+          1714.173913043478,
+          1335.5652173913043
+        ],
+        [
+          1714.173913043478,
+          2318.1739130434785
+        ],
+        [
+          1218.5217391304345,
+          2318.1739130434785
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Non-jeans pants",
+      "score": null,
+      "points": [
+        [
+          1222.869565217391,
+          2357.304347826087
+        ],
+        [
+          1805.478260869565,
+          2357.304347826087
+        ],
+        [
+          1805.478260869565,
+          2657.304347826087
+        ],
+        [
+          1222.869565217391,
+          2657.304347826087
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Sleeve",
+      "score": null,
+      "points": [
+        [
+          1670.695652173913,
+          1283.391304347826
+        ],
+        [
+          1909.8260869565215,
+          1283.391304347826
+        ],
+        [
+          1909.8260869565215,
+          1622.5217391304348
+        ],
+        [
+          1670.695652173913,
+          1622.5217391304348
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Sleeve",
+      "score": null,
+      "points": [
+        [
+          970.695652173913,
+          1261.6521739130433
+        ],
+        [
+          1214.173913043478,
+          1261.6521739130433
+        ],
+        [
+          1214.173913043478,
+          1657.3043478260868
+        ],
+        [
+          970.695652173913,
+          1657.3043478260868
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Gloves",
+      "score": null,
+      "points": [
+        [
+          1101.1304347826085,
+          1157.3043478260868
+        ],
+        [
+          1335.9130434782605,
+          1157.3043478260868
+        ],
+        [
+          1335.9130434782605,
+          1318.173913043478
+        ],
+        [
+          1101.1304347826085,
+          1318.173913043478
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Gloves",
+      "score": null,
+      "points": [
+        [
+          1501.1304347826085,
+          1152.9565217391303
+        ],
+        [
+          1714.173913043478,
+          1152.9565217391303
+        ],
+        [
+          1714.173913043478,
+          1305.1304347826085
+        ],
+        [
+          1501.1304347826085,
+          1305.1304347826085
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Safety Glasses",
+      "score": null,
+      "points": [
+        [
+          1296.782608695652,
+          1039.9130434782608
+        ],
+        [
+          1544.608695652174,
+          1039.9130434782608
+        ],
+        [
+          1544.608695652174,
+          1161.6521739130433
+        ],
+        [
+          1296.782608695652,
+          1161.6521739130433
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "..\\src_images\\IMG_3889.jpg",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024
+}

@@ -1,0 +1,98 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Safety Glasses",
+      "score": null,
+      "points": [
+        [
+          1401.1304347826085,
+          1026.8695652173913
+        ],
+        [
+          1648.9565217391305,
+          1026.8695652173913
+        ],
+        [
+          1648.9565217391305,
+          1135.5652173913043
+        ],
+        [
+          1401.1304347826085,
+          1135.5652173913043
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Sleeve",
+      "score": null,
+      "points": [
+        [
+          1227.2173913043475,
+          1279.0434782608695
+        ],
+        [
+          1896.782608695652,
+          1279.0434782608695
+        ],
+        [
+          1896.782608695652,
+          2096.4347826086955
+        ],
+        [
+          1227.2173913043475,
+          2096.4347826086955
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Non-jeans pants",
+      "score": null,
+      "points": [
+        [
+          1309.8260869565215,
+          2096.4347826086955
+        ],
+        [
+          1840.260869565217,
+          2096.4347826086955
+        ],
+        [
+          1840.260869565217,
+          2639.913043478261
+        ],
+        [
+          1309.8260869565215,
+          2639.913043478261
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "..\\src_images\\IMG_3956.jpg",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024
+}

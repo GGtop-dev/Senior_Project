@@ -1,0 +1,98 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Sleeve",
+      "score": null,
+      "points": [
+        [
+          1188.086956521739,
+          1231.2173913043478
+        ],
+        [
+          1822.869565217391,
+          1231.2173913043478
+        ],
+        [
+          1822.869565217391,
+          2083.391304347826
+        ],
+        [
+          1188.086956521739,
+          2083.391304347826
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Gloves",
+      "score": null,
+      "points": [
+        [
+          1731.565217391304,
+          1374.695652173913
+        ],
+        [
+          1922.869565217391,
+          1374.695652173913
+        ],
+        [
+          1922.869565217391,
+          1674.695652173913
+        ],
+        [
+          1731.565217391304,
+          1674.695652173913
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Non-jeans pants",
+      "score": null,
+      "points": [
+        [
+          1283.7391304347825,
+          2074.695652173913
+        ],
+        [
+          1718.5217391304345,
+          2074.695652173913
+        ],
+        [
+          1718.5217391304345,
+          2705.1304347826085
+        ],
+        [
+          1283.7391304347825,
+          2705.1304347826085
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "..\\src_images\\IMG_8719.jpg",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024
+}

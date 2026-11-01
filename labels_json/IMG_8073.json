@@ -1,0 +1,301 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Safety Shoes",
+      "score": null,
+      "points": [
+        [
+          1275.0434782608695,
+          3335.5652173913045
+        ],
+        [
+          1444.608695652174,
+          3335.5652173913045
+        ],
+        [
+          1444.608695652174,
+          3609.478260869565
+        ],
+        [
+          1275.0434782608695,
+          3609.478260869565
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Safety Shoes",
+      "score": null,
+      "points": [
+        [
+          1448.9565217391305,
+          3218.1739130434785
+        ],
+        [
+          1605.478260869565,
+          3218.1739130434785
+        ],
+        [
+          1605.478260869565,
+          3557.304347826087
+        ],
+        [
+          1448.9565217391305,
+          3557.304347826087
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Jeans",
+      "score": null,
+      "points": [
+        [
+          1188.086956521739,
+          2766.0
+        ],
+        [
+          1740.260869565217,
+          2766.0
+        ],
+        [
+          1740.260869565217,
+          3326.8695652173915
+        ],
+        [
+          1188.086956521739,
+          3326.8695652173915
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Protective apron",
+      "score": null,
+      "points": [
+        [
+          1240.2608695652175,
+          1605.1304347826085
+        ],
+        [
+          1635.9130434782605,
+          1605.1304347826085
+        ],
+        [
+          1635.9130434782605,
+          2852.9565217391305
+        ],
+        [
+          1240.2608695652175,
+          2852.9565217391305
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Sleeve",
+      "score": null,
+      "points": [
+        [
+          1070.695652173913,
+          1622.5217391304348
+        ],
+        [
+          1231.565217391304,
+          1622.5217391304348
+        ],
+        [
+          1231.565217391304,
+          2374.695652173913
+        ],
+        [
+          1070.695652173913,
+          2374.695652173913
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Sleeve",
+      "score": null,
+      "points": [
+        [
+          1622.869565217391,
+          1618.173913043478
+        ],
+        [
+          1783.7391304347825,
+          1618.173913043478
+        ],
+        [
+          1783.7391304347825,
+          2331.217391304348
+        ],
+        [
+          1622.869565217391,
+          2331.217391304348
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Helmet",
+      "score": null,
+      "points": [
+        [
+          1275.0434782608695,
+          1218.173913043478
+        ],
+        [
+          1544.608695652174,
+          1218.173913043478
+        ],
+        [
+          1544.608695652174,
+          1331.2173913043478
+        ],
+        [
+          1275.0434782608695,
+          1331.2173913043478
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Mask",
+      "score": null,
+      "points": [
+        [
+          1327.2173913043475,
+          1409.478260869565
+        ],
+        [
+          1540.260869565217,
+          1409.478260869565
+        ],
+        [
+          1540.260869565217,
+          1552.9565217391303
+        ],
+        [
+          1327.2173913043475,
+          1552.9565217391303
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Gloves",
+      "score": null,
+      "points": [
+        [
+          953.304347826087,
+          2383.391304347826
+        ],
+        [
+          1170.695652173913,
+          2383.391304347826
+        ],
+        [
+          1170.695652173913,
+          2539.913043478261
+        ],
+        [
+          953.304347826087,
+          2539.913043478261
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Gloves",
+      "score": null,
+      "points": [
+        [
+          1683.7391304347825,
+          2339.913043478261
+        ],
+        [
+          1870.695652173913,
+          2339.913043478261
+        ],
+        [
+          1870.695652173913,
+          2531.217391304348
+        ],
+        [
+          1683.7391304347825,
+          2531.217391304348
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "..\\src_images\\IMG_8073.jpg",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024
+}

@@ -1,0 +1,98 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Non-jeans pants",
+      "score": null,
+      "points": [
+        [
+          1322.869565217391,
+          2100.782608695652
+        ],
+        [
+          1801.1304347826085,
+          2100.782608695652
+        ],
+        [
+          1801.1304347826085,
+          2679.0434782608695
+        ],
+        [
+          1322.869565217391,
+          2679.0434782608695
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Sleeve",
+      "score": null,
+      "points": [
+        [
+          1240.2608695652175,
+          1274.695652173913
+        ],
+        [
+          1909.8260869565215,
+          1274.695652173913
+        ],
+        [
+          1909.8260869565215,
+          2083.391304347826
+        ],
+        [
+          1240.2608695652175,
+          2083.391304347826
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Safety Glasses",
+      "score": null,
+      "points": [
+        [
+          1440.2608695652175,
+          970.3478260869566
+        ],
+        [
+          1688.086956521739,
+          970.3478260869566
+        ],
+        [
+          1688.086956521739,
+          1100.782608695652
+        ],
+        [
+          1440.2608695652175,
+          1100.782608695652
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "..\\src_images\\IMG_3961.jpg",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024
+}

@@ -1,0 +1,128 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Safety Glasses",
+      "score": null,
+      "points": [
+        [
+          1957.6250000000005,
+          1446.6250000000002
+        ],
+        [
+          2388.8750000000005,
+          1446.6250000000002
+        ],
+        [
+          2388.8750000000005,
+          1590.3750000000002
+        ],
+        [
+          1957.6250000000005,
+          1590.3750000000002
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Mask",
+      "score": null,
+      "points": [
+        [
+          1963.8750000000005,
+          1559.1250000000002
+        ],
+        [
+          2401.3750000000005,
+          1559.1250000000002
+        ],
+        [
+          2401.3750000000005,
+          1852.8750000000002
+        ],
+        [
+          1963.8750000000005,
+          1852.8750000000002
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Jeans",
+      "score": null,
+      "points": [
+        [
+          1595.1250000000005,
+          3365.375
+        ],
+        [
+          2513.8750000000005,
+          3365.375
+        ],
+        [
+          2513.8750000000005,
+          5002.875
+        ],
+        [
+          1595.1250000000005,
+          5002.875
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Sleeve",
+      "score": null,
+      "points": [
+        [
+          1413.8750000000005,
+          1909.1250000000002
+        ],
+        [
+          2782.6250000000005,
+          1909.1250000000002
+        ],
+        [
+          2782.6250000000005,
+          3471.625
+        ],
+        [
+          1413.8750000000005,
+          3471.625
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "IMG_3801.jpg",
+  "imageData": null,
+  "imageHeight": 5712,
+  "imageWidth": 4284,
+  "description": ""
+}

@@ -1,0 +1,69 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Jeans",
+      "score": null,
+      "points": [
+        [
+          1157.6521739130435,
+          2179.0434782608695
+        ],
+        [
+          1844.608695652174,
+          2179.0434782608695
+        ],
+        [
+          1844.608695652174,
+          2944.2608695652175
+        ],
+        [
+          1157.6521739130435,
+          2944.2608695652175
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Protective apron",
+      "score": null,
+      "points": [
+        [
+          1131.565217391304,
+          748.6086956521739
+        ],
+        [
+          1822.869565217391,
+          748.6086956521739
+        ],
+        [
+          1822.869565217391,
+          2118.1739130434785
+        ],
+        [
+          1131.565217391304,
+          2118.1739130434785
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "..\\src_images\\IMG_8616.jpg",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024
+}

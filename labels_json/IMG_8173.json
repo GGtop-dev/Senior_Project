@@ -1,0 +1,128 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Helmet",
+      "score": null,
+      "points": [
+        [
+          1607.6250000000005,
+          365.3750000000002
+        ],
+        [
+          2251.3750000000005,
+          365.3750000000002
+        ],
+        [
+          2251.3750000000005,
+          777.8750000000002
+        ],
+        [
+          1607.6250000000005,
+          777.8750000000002
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Non-jeans pants",
+      "score": null,
+      "points": [
+        [
+          1438.8750000000005,
+          3665.375
+        ],
+        [
+          2507.6250000000005,
+          3665.375
+        ],
+        [
+          2507.6250000000005,
+          5246.625
+        ],
+        [
+          1438.8750000000005,
+          5246.625
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Safety Shoes",
+      "score": null,
+      "points": [
+        [
+          1670.1250000000005,
+          5227.875
+        ],
+        [
+          2032.6250000000005,
+          5227.875
+        ],
+        [
+          2032.6250000000005,
+          5665.375
+        ],
+        [
+          1670.1250000000005,
+          5665.375
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Safety Shoes",
+      "score": null,
+      "points": [
+        [
+          2032.6250000000005,
+          5202.875
+        ],
+        [
+          2495.1250000000005,
+          5202.875
+        ],
+        [
+          2495.1250000000005,
+          5559.125
+        ],
+        [
+          2032.6250000000005,
+          5559.125
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "IMG_8173.jpg",
+  "imageData": null,
+  "imageHeight": 5712,
+  "imageWidth": 4284,
+  "description": ""
+}

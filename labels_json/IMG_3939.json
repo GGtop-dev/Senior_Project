@@ -1,0 +1,98 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Non-jeans pants",
+      "score": null,
+      "points": [
+        [
+          1296.782608695652,
+          2096.4347826086955
+        ],
+        [
+          1818.5217391304345,
+          2096.4347826086955
+        ],
+        [
+          1818.5217391304345,
+          2622.521739130435
+        ],
+        [
+          1296.782608695652,
+          2622.521739130435
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Sleeve",
+      "score": null,
+      "points": [
+        [
+          975.0434782608695,
+          1287.7391304347825
+        ],
+        [
+          2105.478260869565,
+          1287.7391304347825
+        ],
+        [
+          2105.478260869565,
+          2070.3478260869565
+        ],
+        [
+          975.0434782608695,
+          2070.3478260869565
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Safety Glasses",
+      "score": null,
+      "points": [
+        [
+          1383.7391304347825,
+          1022.5217391304349
+        ],
+        [
+          1631.565217391304,
+          1022.5217391304349
+        ],
+        [
+          1631.565217391304,
+          1131.2173913043478
+        ],
+        [
+          1383.7391304347825,
+          1131.2173913043478
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "..\\src_images\\IMG_3939.jpg",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024
+}

@@ -1,0 +1,127 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Non-jeans pants",
+      "score": null,
+      "points": [
+        [
+          1188.086956521739,
+          2518.1739130434785
+        ],
+        [
+          1788.086956521739,
+          2518.1739130434785
+        ],
+        [
+          1788.086956521739,
+          2748.608695652174
+        ],
+        [
+          1188.086956521739,
+          2748.608695652174
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Protective apron",
+      "score": null,
+      "points": [
+        [
+          1179.391304347826,
+          1170.3478260869565
+        ],
+        [
+          1757.6521739130435,
+          1170.3478260869565
+        ],
+        [
+          1757.6521739130435,
+          2505.1304347826085
+        ],
+        [
+          1179.391304347826,
+          2505.1304347826085
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Mask",
+      "score": null,
+      "points": [
+        [
+          1331.565217391304,
+          970.3478260869566
+        ],
+        [
+          1592.4347826086955,
+          970.3478260869566
+        ],
+        [
+          1592.4347826086955,
+          1135.5652173913043
+        ],
+        [
+          1331.565217391304,
+          1135.5652173913043
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Safety Glasses",
+      "score": null,
+      "points": [
+        [
+          1335.9130434782605,
+          909.4782608695652
+        ],
+        [
+          1596.782608695652,
+          909.4782608695652
+        ],
+        [
+          1596.782608695652,
+          983.3913043478261
+        ],
+        [
+          1335.9130434782605,
+          983.3913043478261
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "..\\src_images\\IMG_8662.jpg",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024
+}

@@ -1,0 +1,98 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Sleeve",
+      "score": null,
+      "points": [
+        [
+          1192.4347826086955,
+          1244.2608695652173
+        ],
+        [
+          1883.7391304347825,
+          1244.2608695652173
+        ],
+        [
+          1883.7391304347825,
+          2061.6521739130435
+        ],
+        [
+          1192.4347826086955,
+          2061.6521739130435
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Gloves",
+      "score": null,
+      "points": [
+        [
+          1753.304347826087,
+          1874.6956521739128
+        ],
+        [
+          1927.2173913043475,
+          1874.6956521739128
+        ],
+        [
+          1927.2173913043475,
+          2300.782608695652
+        ],
+        [
+          1753.304347826087,
+          2300.782608695652
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Non-jeans pants",
+      "score": null,
+      "points": [
+        [
+          1292.4347826086955,
+          2061.6521739130435
+        ],
+        [
+          1731.565217391304,
+          2061.6521739130435
+        ],
+        [
+          1731.565217391304,
+          2670.3478260869565
+        ],
+        [
+          1292.4347826086955,
+          2670.3478260869565
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "..\\src_images\\IMG_8710.jpg",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024
+}

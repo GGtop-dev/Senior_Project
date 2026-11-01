@@ -1,0 +1,98 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Non-jeans pants",
+      "score": null,
+      "points": [
+        [
+          1266.3478260869565,
+          2109.4782608695655
+        ],
+        [
+          1770.695652173913,
+          2109.4782608695655
+        ],
+        [
+          1770.695652173913,
+          2605.1304347826085
+        ],
+        [
+          1266.3478260869565,
+          2605.1304347826085
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Sleeve",
+      "score": null,
+      "points": [
+        [
+          1188.086956521739,
+          1300.782608695652
+        ],
+        [
+          1827.2173913043475,
+          1300.782608695652
+        ],
+        [
+          1827.2173913043475,
+          2092.086956521739
+        ],
+        [
+          1188.086956521739,
+          2092.086956521739
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Safety Glasses",
+      "score": null,
+      "points": [
+        [
+          1348.9565217391305,
+          1061.6521739130433
+        ],
+        [
+          1609.8260869565215,
+          1061.6521739130433
+        ],
+        [
+          1609.8260869565215,
+          1152.9565217391303
+        ],
+        [
+          1348.9565217391305,
+          1152.9565217391303
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "..\\src_images\\IMG_3953.jpg",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024
+}

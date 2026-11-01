@@ -1,0 +1,185 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Safety Glasses",
+      "score": null,
+      "points": [
+        [
+          1288.086956521739,
+          1044.2608695652173
+        ],
+        [
+          1540.260869565217,
+          1044.2608695652173
+        ],
+        [
+          1540.260869565217,
+          1135.5652173913043
+        ],
+        [
+          1288.086956521739,
+          1135.5652173913043
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Helmet",
+      "score": null,
+      "points": [
+        [
+          1279.391304347826,
+          848.6086956521739
+        ],
+        [
+          1544.608695652174,
+          848.6086956521739
+        ],
+        [
+          1544.608695652174,
+          970.3478260869566
+        ],
+        [
+          1279.391304347826,
+          970.3478260869566
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Protective apron",
+      "score": null,
+      "points": [
+        [
+          1231.565217391304,
+          1326.8695652173913
+        ],
+        [
+          1722.869565217391,
+          1326.8695652173913
+        ],
+        [
+          1722.869565217391,
+          2392.086956521739
+        ],
+        [
+          1231.565217391304,
+          2392.086956521739
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Sleeve",
+      "score": null,
+      "points": [
+        [
+          1666.3478260869565,
+          1352.9565217391303
+        ],
+        [
+          1918.5217391304345,
+          1352.9565217391303
+        ],
+        [
+          1918.5217391304345,
+          1809.478260869565
+        ],
+        [
+          1666.3478260869565,
+          1809.478260869565
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Sleeve",
+      "score": null,
+      "points": [
+        [
+          1131.565217391304,
+          1387.7391304347825
+        ],
+        [
+          1235.9130434782605,
+          1387.7391304347825
+        ],
+        [
+          1235.9130434782605,
+          2096.4347826086955
+        ],
+        [
+          1131.565217391304,
+          2096.4347826086955
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Non-jeans pants",
+      "score": null,
+      "points": [
+        [
+          1240.2608695652175,
+          2409.4782608695655
+        ],
+        [
+          1796.782608695652,
+          2409.4782608695655
+        ],
+        [
+          1796.782608695652,
+          2731.217391304348
+        ],
+        [
+          1240.2608695652175,
+          2731.217391304348
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "..\\src_images\\IMG_3918.jpg",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024
+}

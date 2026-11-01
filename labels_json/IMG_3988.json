@@ -1,0 +1,128 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Jeans",
+      "score": null,
+      "points": [
+        [
+          1192.4347826086955,
+          1961.6521739130433
+        ],
+        [
+          1783.7391304347825,
+          1961.6521739130433
+        ],
+        [
+          1783.7391304347825,
+          2800.782608695652
+        ],
+        [
+          1192.4347826086955,
+          2800.782608695652
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Safety Shoes",
+      "score": null,
+      "points": [
+        [
+          1227.2173913043475,
+          2809.4782608695655
+        ],
+        [
+          1353.304347826087,
+          2809.4782608695655
+        ],
+        [
+          1353.304347826087,
+          2922.521739130435
+        ],
+        [
+          1227.2173913043475,
+          2922.521739130435
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Safety Shoes",
+      "score": null,
+      "points": [
+        [
+          1592.4347826086955,
+          2796.4347826086955
+        ],
+        [
+          1762.0,
+          2796.4347826086955
+        ],
+        [
+          1762.0,
+          2948.608695652174
+        ],
+        [
+          1592.4347826086955,
+          2948.608695652174
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Safety Glasses",
+      "score": null,
+      "points": [
+        [
+          1283.7391304347825,
+          926.8695652173913
+        ],
+        [
+          1548.9565217391305,
+          926.8695652173913
+        ],
+        [
+          1548.9565217391305,
+          1039.9130434782608
+        ],
+        [
+          1283.7391304347825,
+          1039.9130434782608
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "IMG_3988.jpg",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024,
+  "description": ""
+}

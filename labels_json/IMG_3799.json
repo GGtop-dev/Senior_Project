@@ -1,0 +1,128 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Safety Glasses",
+      "score": null,
+      "points": [
+        [
+          1932.6250000000005,
+          1521.6250000000002
+        ],
+        [
+          2382.6250000000005,
+          1521.6250000000002
+        ],
+        [
+          2382.6250000000005,
+          1652.8750000000002
+        ],
+        [
+          1932.6250000000005,
+          1652.8750000000002
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Mask",
+      "score": null,
+      "points": [
+        [
+          1976.3750000000005,
+          1659.1250000000002
+        ],
+        [
+          2351.3750000000005,
+          1659.1250000000002
+        ],
+        [
+          2351.3750000000005,
+          1884.1250000000002
+        ],
+        [
+          1976.3750000000005,
+          1884.1250000000002
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Jeans",
+      "score": null,
+      "points": [
+        [
+          1620.1250000000005,
+          3377.875
+        ],
+        [
+          2495.1250000000005,
+          3377.875
+        ],
+        [
+          2495.1250000000005,
+          4834.125
+        ],
+        [
+          1620.1250000000005,
+          4834.125
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Sleeve",
+      "score": null,
+      "points": [
+        [
+          1420.1250000000005,
+          1934.1250000000002
+        ],
+        [
+          2763.8750000000005,
+          1934.1250000000002
+        ],
+        [
+          2763.8750000000005,
+          3427.875
+        ],
+        [
+          1420.1250000000005,
+          3427.875
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "IMG_3799.jpg",
+  "imageData": null,
+  "imageHeight": 5712,
+  "imageWidth": 4284,
+  "description": ""
+}

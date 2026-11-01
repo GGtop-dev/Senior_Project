@@ -1,0 +1,156 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Jeans",
+      "score": null,
+      "points": [
+        [
+          1292.4347826086955,
+          2205.130434782609
+        ],
+        [
+          1596.782608695652,
+          2205.130434782609
+        ],
+        [
+          1596.782608695652,
+          2761.6521739130435
+        ],
+        [
+          1292.4347826086955,
+          2761.6521739130435
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Gloves",
+      "score": null,
+      "points": [
+        [
+          1483.7391304347825,
+          2070.3478260869565
+        ],
+        [
+          1622.869565217391,
+          2070.3478260869565
+        ],
+        [
+          1622.869565217391,
+          2218.1739130434785
+        ],
+        [
+          1483.7391304347825,
+          2218.1739130434785
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Mask",
+      "score": null,
+      "points": [
+        [
+          1427.2173913043475,
+          1605.1304347826085
+        ],
+        [
+          1570.695652173913,
+          1605.1304347826085
+        ],
+        [
+          1570.695652173913,
+          1674.695652173913
+        ],
+        [
+          1427.2173913043475,
+          1674.695652173913
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Safety Glasses",
+      "score": null,
+      "points": [
+        [
+          1405.478260869565,
+          1561.6521739130433
+        ],
+        [
+          1566.3478260869565,
+          1561.6521739130433
+        ],
+        [
+          1566.3478260869565,
+          1609.478260869565
+        ],
+        [
+          1405.478260869565,
+          1609.478260869565
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Helmet",
+      "score": null,
+      "points": [
+        [
+          1405.478260869565,
+          1479.0434782608695
+        ],
+        [
+          1562.0,
+          1479.0434782608695
+        ],
+        [
+          1562.0,
+          1548.6086956521738
+        ],
+        [
+          1405.478260869565,
+          1548.6086956521738
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "..\\src_images\\IMG_3771.jpg",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024
+}

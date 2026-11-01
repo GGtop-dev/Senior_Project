@@ -1,0 +1,98 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Non-jeans pants",
+      "score": null,
+      "points": [
+        [
+          1551.3750000000005,
+          3634.125
+        ],
+        [
+          2595.1250000000005,
+          3634.125
+        ],
+        [
+          2595.1250000000005,
+          5221.625
+        ],
+        [
+          1551.3750000000005,
+          5221.625
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Mask",
+      "score": null,
+      "points": [
+        [
+          1788.8750000000005,
+          990.3750000000002
+        ],
+        [
+          2238.8750000000005,
+          990.3750000000002
+        ],
+        [
+          2238.8750000000005,
+          1315.3750000000002
+        ],
+        [
+          1788.8750000000005,
+          1315.3750000000002
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Helmet",
+      "score": null,
+      "points": [
+        [
+          1632.6250000000005,
+          459.1250000000002
+        ],
+        [
+          2363.8750000000005,
+          459.1250000000002
+        ],
+        [
+          2363.8750000000005,
+          834.1250000000002
+        ],
+        [
+          1632.6250000000005,
+          834.1250000000002
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "..\\src_images\\IMG_8160.jpg",
+  "imageData": null,
+  "imageHeight": 5712,
+  "imageWidth": 4284
+}

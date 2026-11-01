@@ -1,0 +1,127 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Non-jeans pants",
+      "score": null,
+      "points": [
+        [
+          1851.3750000000005,
+          3446.625
+        ],
+        [
+          2676.3750000000005,
+          3446.625
+        ],
+        [
+          2676.3750000000005,
+          5002.875
+        ],
+        [
+          1851.3750000000005,
+          5002.875
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Sleeve",
+      "score": null,
+      "points": [
+        [
+          1701.3750000000005,
+          2065.375
+        ],
+        [
+          2845.1250000000005,
+          2065.375
+        ],
+        [
+          2845.1250000000005,
+          3340.375
+        ],
+        [
+          1701.3750000000005,
+          3340.375
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Mask",
+      "score": null,
+      "points": [
+        [
+          2076.3750000000005,
+          1846.6250000000002
+        ],
+        [
+          2451.3750000000005,
+          1846.6250000000002
+        ],
+        [
+          2451.3750000000005,
+          2046.6250000000002
+        ],
+        [
+          2076.3750000000005,
+          2046.6250000000002
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Helmet",
+      "score": null,
+      "points": [
+        [
+          2020.1250000000005,
+          1477.8750000000002
+        ],
+        [
+          2476.3750000000005,
+          1477.8750000000002
+        ],
+        [
+          2476.3750000000005,
+          1690.3750000000002
+        ],
+        [
+          2020.1250000000005,
+          1690.3750000000002
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "..\\src_images\\IMG_8134.jpg",
+  "imageData": null,
+  "imageHeight": 5712,
+  "imageWidth": 4284
+}

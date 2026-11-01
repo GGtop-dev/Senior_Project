@@ -1,0 +1,127 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Non-jeans pants",
+      "score": null,
+      "points": [
+        [
+          1214.173913043478,
+          2087.7391304347825
+        ],
+        [
+          1670.695652173913,
+          2087.7391304347825
+        ],
+        [
+          1670.695652173913,
+          2674.695652173913
+        ],
+        [
+          1214.173913043478,
+          2674.695652173913
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Sleeve",
+      "score": null,
+      "points": [
+        [
+          975.0434782608695,
+          1279.0434782608695
+        ],
+        [
+          2070.695652173913,
+          1279.0434782608695
+        ],
+        [
+          2070.695652173913,
+          2079.0434782608695
+        ],
+        [
+          975.0434782608695,
+          2079.0434782608695
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Gloves",
+      "score": null,
+      "points": [
+        [
+          966.3478260869565,
+          1057.3043478260868
+        ],
+        [
+          1131.565217391304,
+          1057.3043478260868
+        ],
+        [
+          1131.565217391304,
+          1239.9130434782608
+        ],
+        [
+          966.3478260869565,
+          1239.9130434782608
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Gloves",
+      "score": null,
+      "points": [
+        [
+          1901.1304347826085,
+          1065.9999999999998
+        ],
+        [
+          2083.7391304347825,
+          1065.9999999999998
+        ],
+        [
+          2083.7391304347825,
+          1248.6086956521738
+        ],
+        [
+          1901.1304347826085,
+          1248.6086956521738
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "..\\src_images\\IMG_8700.jpg",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024
+}

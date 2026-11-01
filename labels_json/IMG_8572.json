@@ -1,0 +1,127 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Safety Glasses",
+      "score": null,
+      "points": [
+        [
+          1270.695652173913,
+          722.5217391304348
+        ],
+        [
+          1609.8260869565215,
+          722.5217391304348
+        ],
+        [
+          1609.8260869565215,
+          839.9130434782609
+        ],
+        [
+          1270.695652173913,
+          839.9130434782609
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Gloves",
+      "score": null,
+      "points": [
+        [
+          675.0434782608695,
+          1883.391304347826
+        ],
+        [
+          992.4347826086955,
+          1883.391304347826
+        ],
+        [
+          992.4347826086955,
+          2187.7391304347825
+        ],
+        [
+          675.0434782608695,
+          2187.7391304347825
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Gloves",
+      "score": null,
+      "points": [
+        [
+          1831.565217391304,
+          1905.1304347826085
+        ],
+        [
+          2105.478260869565,
+          1905.1304347826085
+        ],
+        [
+          2105.478260869565,
+          2235.5652173913045
+        ],
+        [
+          1831.565217391304,
+          2235.5652173913045
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Non-jeans pants",
+      "score": null,
+      "points": [
+        [
+          1101.1304347826085,
+          1979.0434782608695
+        ],
+        [
+          1801.1304347826085,
+          1979.0434782608695
+        ],
+        [
+          1801.1304347826085,
+          3057.304347826087
+        ],
+        [
+          1101.1304347826085,
+          3057.304347826087
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "..\\src_images\\IMG_8572.jpg",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024
+}

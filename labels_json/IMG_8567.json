@@ -1,0 +1,127 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Non-jeans pants",
+      "score": null,
+      "points": [
+        [
+          1122.869565217391,
+          2005.1304347826087
+        ],
+        [
+          1805.478260869565,
+          2005.1304347826087
+        ],
+        [
+          1805.478260869565,
+          3026.8695652173915
+        ],
+        [
+          1122.869565217391,
+          3026.8695652173915
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Safety Glasses",
+      "score": null,
+      "points": [
+        [
+          1279.391304347826,
+          718.1739130434783
+        ],
+        [
+          1631.565217391304,
+          718.1739130434783
+        ],
+        [
+          1631.565217391304,
+          857.304347826087
+        ],
+        [
+          1279.391304347826,
+          857.304347826087
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Gloves",
+      "score": null,
+      "points": [
+        [
+          1883.7391304347825,
+          1013.8260869565216
+        ],
+        [
+          2214.1739130434785,
+          1013.8260869565216
+        ],
+        [
+          2214.1739130434785,
+          1439.9130434782608
+        ],
+        [
+          1883.7391304347825,
+          1439.9130434782608
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Gloves",
+      "score": null,
+      "points": [
+        [
+          762.0,
+          1039.9130434782608
+        ],
+        [
+          1057.6521739130435,
+          1039.9130434782608
+        ],
+        [
+          1057.6521739130435,
+          1405.1304347826085
+        ],
+        [
+          762.0,
+          1405.1304347826085
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "..\\src_images\\IMG_8567.jpg",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024
+}

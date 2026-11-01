@@ -1,0 +1,214 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Safety Shoes",
+      "score": null,
+      "points": [
+        [
+          1801.3750000000005,
+          4734.125
+        ],
+        [
+          2107.6250000000005,
+          4734.125
+        ],
+        [
+          2107.6250000000005,
+          5234.125
+        ],
+        [
+          1801.3750000000005,
+          5234.125
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Safety Shoes",
+      "score": null,
+      "points": [
+        [
+          2101.3750000000005,
+          4752.875
+        ],
+        [
+          2401.3750000000005,
+          4752.875
+        ],
+        [
+          2401.3750000000005,
+          5265.375
+        ],
+        [
+          2101.3750000000005,
+          5265.375
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Non-jeans pants",
+      "score": null,
+      "points": [
+        [
+          1695.1250000000005,
+          3521.625
+        ],
+        [
+          2432.6250000000005,
+          3521.625
+        ],
+        [
+          2432.6250000000005,
+          4796.625
+        ],
+        [
+          1695.1250000000005,
+          4796.625
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Gloves",
+      "score": null,
+      "points": [
+        [
+          2420.1250000000005,
+          3171.625
+        ],
+        [
+          2663.8750000000005,
+          3171.625
+        ],
+        [
+          2663.8750000000005,
+          3571.625
+        ],
+        [
+          2420.1250000000005,
+          3571.625
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Gloves",
+      "score": null,
+      "points": [
+        [
+          1520.1250000000005,
+          3134.125
+        ],
+        [
+          1738.8750000000005,
+          3134.125
+        ],
+        [
+          1738.8750000000005,
+          3571.625
+        ],
+        [
+          1520.1250000000005,
+          3571.625
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Mask",
+      "score": null,
+      "points": [
+        [
+          1888.8750000000005,
+          1602.8750000000002
+        ],
+        [
+          2307.6250000000005,
+          1602.8750000000002
+        ],
+        [
+          2307.6250000000005,
+          1846.6250000000002
+        ],
+        [
+          1888.8750000000005,
+          1846.6250000000002
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Helmet",
+      "score": null,
+      "points": [
+        [
+          1882.6250000000005,
+          1302.8750000000002
+        ],
+        [
+          2320.1250000000005,
+          1302.8750000000002
+        ],
+        [
+          2320.1250000000005,
+          1540.3750000000002
+        ],
+        [
+          1882.6250000000005,
+          1540.3750000000002
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "..\\src_images\\IMG_8119.jpg",
+  "imageData": null,
+  "imageHeight": 5712,
+  "imageWidth": 4284
+}

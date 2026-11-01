@@ -1,0 +1,98 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Safety Glasses",
+      "score": null,
+      "points": [
+        [
+          1448.9565217391305,
+          961.6521739130434
+        ],
+        [
+          1688.086956521739,
+          961.6521739130434
+        ],
+        [
+          1688.086956521739,
+          1135.5652173913043
+        ],
+        [
+          1448.9565217391305,
+          1135.5652173913043
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Sleeve",
+      "score": null,
+      "points": [
+        [
+          1079.391304347826,
+          1274.695652173913
+        ],
+        [
+          2062.0,
+          1274.695652173913
+        ],
+        [
+          2062.0,
+          2087.7391304347825
+        ],
+        [
+          1079.391304347826,
+          2087.7391304347825
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Non-jeans pants",
+      "score": null,
+      "points": [
+        [
+          1340.2608695652175,
+          2105.130434782609
+        ],
+        [
+          1805.478260869565,
+          2105.130434782609
+        ],
+        [
+          1805.478260869565,
+          2700.782608695652
+        ],
+        [
+          1340.2608695652175,
+          2700.782608695652
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "..\\src_images\\IMG_3964.jpg",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024
+}

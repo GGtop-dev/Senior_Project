@@ -1,0 +1,127 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Jeans",
+      "score": null,
+      "points": [
+        [
+          1192.4347826086955,
+          1957.3043478260868
+        ],
+        [
+          1714.173913043478,
+          1957.3043478260868
+        ],
+        [
+          1714.173913043478,
+          2696.4347826086955
+        ],
+        [
+          1192.4347826086955,
+          2696.4347826086955
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Protective apron",
+      "score": null,
+      "points": [
+        [
+          1209.8260869565215,
+          866.0
+        ],
+        [
+          1753.304347826087,
+          866.0
+        ],
+        [
+          1753.304347826087,
+          1970.3478260869563
+        ],
+        [
+          1209.8260869565215,
+          1970.3478260869563
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Gloves",
+      "score": null,
+      "points": [
+        [
+          1762.0,
+          1765.9999999999998
+        ],
+        [
+          1879.391304347826,
+          1765.9999999999998
+        ],
+        [
+          1879.391304347826,
+          1948.6086956521738
+        ],
+        [
+          1762.0,
+          1948.6086956521738
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Gloves",
+      "score": null,
+      "points": [
+        [
+          1027.2173913043475,
+          1757.3043478260868
+        ],
+        [
+          1179.391304347826,
+          1757.3043478260868
+        ],
+        [
+          1179.391304347826,
+          1979.0434782608695
+        ],
+        [
+          1027.2173913043475,
+          1979.0434782608695
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "..\\src_images\\IMG_8625.jpg",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024
+}

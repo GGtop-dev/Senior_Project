@@ -1,0 +1,70 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Jeans",
+      "score": null,
+      "points": [
+        [
+          1645.1250000000005,
+          3327.875
+        ],
+        [
+          2407.6250000000005,
+          3327.875
+        ],
+        [
+          2407.6250000000005,
+          4615.375
+        ],
+        [
+          1645.1250000000005,
+          4615.375
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Sleeve",
+      "score": null,
+      "points": [
+        [
+          1501.3750000000005,
+          2002.8750000000002
+        ],
+        [
+          2657.6250000000005,
+          2002.8750000000002
+        ],
+        [
+          2657.6250000000005,
+          3352.875
+        ],
+        [
+          1501.3750000000005,
+          3352.875
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "IMG_3794.jpg",
+  "imageData": null,
+  "imageHeight": 5712,
+  "imageWidth": 4284,
+  "description": ""
+}

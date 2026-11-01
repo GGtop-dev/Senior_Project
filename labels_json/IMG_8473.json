@@ -1,0 +1,127 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Safety Shoes",
+      "score": null,
+      "points": [
+        [
+          1471.7222222222222,
+          2729.888888888889
+        ],
+        [
+          1610.6111111111109,
+          2729.888888888889
+        ],
+        [
+          1610.6111111111109,
+          2957.666666666667
+        ],
+        [
+          1471.7222222222222,
+          2957.666666666667
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Safety Shoes",
+      "score": null,
+      "points": [
+        [
+          1732.8333333333335,
+          2732.666666666667
+        ],
+        [
+          1893.9444444444443,
+          2732.666666666667
+        ],
+        [
+          1893.9444444444443,
+          2974.3333333333335
+        ],
+        [
+          1732.8333333333335,
+          2974.3333333333335
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Jeans",
+      "score": null,
+      "points": [
+        [
+          1432.8333333333335,
+          2382.666666666667
+        ],
+        [
+          1882.8333333333335,
+          2382.666666666667
+        ],
+        [
+          1882.8333333333335,
+          2710.444444444445
+        ],
+        [
+          1432.8333333333335,
+          2710.444444444445
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Protective apron",
+      "score": null,
+      "points": [
+        [
+          1460.6111111111109,
+          1407.6666666666667
+        ],
+        [
+          1843.9444444444443,
+          1407.6666666666667
+        ],
+        [
+          1843.9444444444443,
+          2352.1111111111113
+        ],
+        [
+          1460.6111111111109,
+          2352.1111111111113
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "..\\src_images\\IMG_8473.jpg",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024
+}

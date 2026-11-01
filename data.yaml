@@ -1,0 +1,14 @@
+path: C:/Senior_Project_muYolov8/newtrain/yolo
+train: train/images
+val: val/images
+test: test/images
+names:
+  0: Gloves
+  1: Helmet
+  2: Mask
+  3: Protective apron
+  4: Safety Shoes
+  5: Sleeve
+  6: Jeans
+  7: Non-jeans pants
+  8: Safety Glasses

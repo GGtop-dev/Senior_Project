@@ -1,0 +1,127 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Gloves",
+      "score": null,
+      "points": [
+        [
+          1022.869565217391,
+          1309.478260869565
+        ],
+        [
+          1192.4347826086955,
+          1309.478260869565
+        ],
+        [
+          1192.4347826086955,
+          1565.9999999999998
+        ],
+        [
+          1022.869565217391,
+          1565.9999999999998
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Gloves",
+      "score": null,
+      "points": [
+        [
+          1740.260869565217,
+          1348.6086956521738
+        ],
+        [
+          1870.695652173913,
+          1348.6086956521738
+        ],
+        [
+          1870.695652173913,
+          1579.0434782608695
+        ],
+        [
+          1740.260869565217,
+          1579.0434782608695
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Protective apron",
+      "score": null,
+      "points": [
+        [
+          1201.1304347826085,
+          835.5652173913044
+        ],
+        [
+          1722.869565217391,
+          835.5652173913044
+        ],
+        [
+          1722.869565217391,
+          1965.9999999999998
+        ],
+        [
+          1201.1304347826085,
+          1965.9999999999998
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Jeans",
+      "score": null,
+      "points": [
+        [
+          1214.173913043478,
+          2009.4782608695652
+        ],
+        [
+          1731.565217391304,
+          2009.4782608695652
+        ],
+        [
+          1731.565217391304,
+          2687.7391304347825
+        ],
+        [
+          1214.173913043478,
+          2687.7391304347825
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "..\\src_images\\IMG_8632.jpg",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024
+}

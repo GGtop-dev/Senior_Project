@@ -1,0 +1,243 @@
+{
+  "version": "4.1.0",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "Non-jeans pants",
+      "score": null,
+      "points": [
+        [
+          1235.9130434782605,
+          2422.521739130435
+        ],
+        [
+          1805.478260869565,
+          2422.521739130435
+        ],
+        [
+          1805.478260869565,
+          2696.4347826086955
+        ],
+        [
+          1235.9130434782605,
+          2696.4347826086955
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Helmet",
+      "score": null,
+      "points": [
+        [
+          1262.0,
+          818.1739130434783
+        ],
+        [
+          1579.391304347826,
+          818.1739130434783
+        ],
+        [
+          1579.391304347826,
+          1005.1304347826086
+        ],
+        [
+          1262.0,
+          1005.1304347826086
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Safety Glasses",
+      "score": null,
+      "points": [
+        [
+          1296.782608695652,
+          1052.9565217391303
+        ],
+        [
+          1553.304347826087,
+          1052.9565217391303
+        ],
+        [
+          1553.304347826087,
+          1148.6086956521738
+        ],
+        [
+          1296.782608695652,
+          1148.6086956521738
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Gloves",
+      "score": null,
+      "points": [
+        [
+          1683.7391304347825,
+          2126.8695652173915
+        ],
+        [
+          1809.8260869565215,
+          2126.8695652173915
+        ],
+        [
+          1809.8260869565215,
+          2309.4782608695655
+        ],
+        [
+          1683.7391304347825,
+          2309.4782608695655
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Gloves",
+      "score": null,
+      "points": [
+        [
+          1162.0,
+          2135.5652173913045
+        ],
+        [
+          1283.7391304347825,
+          2135.5652173913045
+        ],
+        [
+          1283.7391304347825,
+          2266.0
+        ],
+        [
+          1162.0,
+          2266.0
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Sleeve",
+      "score": null,
+      "points": [
+        [
+          1683.7391304347825,
+          1326.8695652173913
+        ],
+        [
+          1822.869565217391,
+          1326.8695652173913
+        ],
+        [
+          1822.869565217391,
+          2135.5652173913045
+        ],
+        [
+          1683.7391304347825,
+          2135.5652173913045
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Sleeve",
+      "score": null,
+      "points": [
+        [
+          1105.478260869565,
+          1361.6521739130433
+        ],
+        [
+          1222.869565217391,
+          1361.6521739130433
+        ],
+        [
+          1222.869565217391,
+          2118.1739130434785
+        ],
+        [
+          1105.478260869565,
+          2118.1739130434785
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    },
+    {
+      "label": "Protective apron",
+      "score": null,
+      "points": [
+        [
+          1244.608695652174,
+          1313.8260869565215
+        ],
+        [
+          1701.1304347826085,
+          1313.8260869565215
+        ],
+        [
+          1701.1304347826085,
+          2392.086956521739
+        ],
+        [
+          1244.608695652174,
+          2392.086956521739
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "rectangle",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "..\\src_images\\IMG_3906.jpg",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024
+}
