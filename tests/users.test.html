@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User Tests · PPE Inspect</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    body { padding: 24px; background: #fff; }
+    #summary { font-size: 18px; font-weight: 600; margin-bottom: 16px; }
+    #summary[data-status="pass"] { color: var(--success); }
+    #summary[data-status="fail"] { color: var(--danger); }
+    #results { list-style: none; padding: 0; margin: 0; font-size: 14px; }
+    #results li { padding: 6px 0; border-bottom: 1px solid #eee; }
+    #results li.fail { color: var(--danger); }
+    #results pre { margin: 4px 0 0 20px; white-space: pre-wrap; font-size: 12px; }
+    #fixture { display: none; }
+  </style>
+</head>
+<body>
+  <!-- unit test ของ api.profiles / addProfile / removeProfile ไม่เชื่อมต่อ Supabase จริง -->
+  <div id="summary" data-status="running">กำลังทดสอบ…</div>
+  <ul id="results"></ul>
+  <div id="fixture"></div>
+
+  <script src="fake-supabase.js"></script>
+  <script src="../js/mock-data.js"></script>
+  <script src="../js/supabase.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="runner.js"></script>
+  <script src="users.test.js"></script>
+</body>
+</html>

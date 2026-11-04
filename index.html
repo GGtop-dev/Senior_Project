@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>เข้าสู่ระบบ · PPE Inspect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="login">
+    <section class="login-brand">
+      <div class="brand">
+        <span class="brand-logo" data-icon="shield"></span>
+        <div class="brand-name">PPE Inspect</div>
+      </div>
+      <h1>ระบบตรวจอุปกรณ์ป้องกัน<br>ส่วนบุคคล (PPE)</h1>
+      <p>ตรวจ PPE อัตโนมัติที่จุดเข้างาน ดูผลตรวจ รูปถ่าย รายงาน และสถานะอุปกรณ์ได้จากหน้าเว็บเดียว</p>
+      <ul>
+        <li><span class="check-dot" data-icon="check"></span>ตรวจด้วย YOLOv8 บน Raspberry Pi 5 ทำงานต่อได้แม้เน็ตหลุด</li>
+        <li><span class="check-dot" data-icon="check"></span>ดูผลย้อนหลังพร้อมรูปและ bounding box</li>
+        <li><span class="check-dot" data-icon="check"></span>แจ้งเตือนในเว็บเมื่อไม่ผ่านซ้ำหรืออุปกรณ์ขาดการติดต่อ</li>
+      </ul>
+    </section>
+
+    <main class="login-main">
+      <div class="card login-card">
+        <div>
+          <h2>เข้าสู่ระบบ</h2>
+          <p class="muted" style="margin-top:6px">ใช้บัญชี Google ที่ได้รับอนุญาตจากผู้ดูแลระบบ</p>
+        </div>
+
+        <div class="note note-danger hidden" id="login-error" role="alert">
+          <span data-icon="alert"></span>
+          <span id="login-error-text">บัญชีนี้ไม่มีสิทธิ์เข้าใช้ระบบ โปรดติดต่อผู้ดูแลระบบ</span>
+        </div>
+
+        <button class="btn btn-google" id="google-btn" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.54-.19-2.27H12v4.51h6.47c-.29 1.48-1.14 2.73-2.4 3.58v3h3.86c2.26-2.09 3.56-5.17 3.56-8.82z"/>
+            <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96H1.29v3.09C3.26 21.3 7.31 24 12 24z"/>
+            <path fill="#FBBC05" d="M5.27 14.29c-.25-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.98-3.09z"/>
+            <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.98 3.09c.95-2.85 3.6-4.96 6.73-4.96z"/>
+          </svg>
+          เข้าสู่ระบบด้วย Google
+        </button>
+
+        <div class="divider"></div>
+
+        <div class="note">
+          <span data-icon="shield"></span>
+          <span id="login-note">เข้าได้เฉพาะอีเมลที่อยู่ในรายการผู้ใช้ หากยังไม่มีสิทธิ์ โปรดติดต่อผู้ดูแลระบบ</span>
+        </div>
+      </div>
+      <p class="footer-note">Senior Project · PPE Detection with YOLOv8</p>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/ui.js"></script>
+  <script>
+    (async () => {
+      hydrateIcons();
+      const btn = $('google-btn');
+      const params = new URLSearchParams(location.search);
+      const showError = (msg) => {
+        if (msg) $('login-error-text').textContent = msg;
+        $('login-error').classList.remove('hidden');
+      };
+      if (params.get('error') === 'unauthorized') showError();
+
+      if (DEMO) {
+        $('login-note').textContent = 'โหมดตัวอย่าง: ยังไม่ได้ตั้งค่า Supabase ใน js/supabase.js กดปุ่มเพื่อดูหน้าเว็บด้วยข้อมูลตัวอย่าง';
+        btn.addEventListener('click', () => { location.href = 'dashboard.html'; });
+        return;
+      }
+
+      const { data: { session } } = await sb.auth.getSession();
+      if (session) {
+        location.replace('dashboard.html');
+        return;
+      }
+
+      btn.addEventListener('click', async () => {
+        btn.disabled = true;
+        const { error } = await signInWithGoogle();
+        if (error) {
+          showError('เข้าสู่ระบบไม่สำเร็จ: ' + error.message);
+          btn.disabled = false;
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

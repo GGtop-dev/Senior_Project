@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>รายละเอียดการตรวจ · PPE Inspect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-pending">
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+
+    <main class="main" style="gap:16px">
+      <nav class="breadcrumb" aria-label="breadcrumb">
+        <a href="history.html">ประวัติการตรวจ</a><span data-icon="chevronRight"></span><span id="crumb">…</span>
+      </nav>
+
+      <div class="banners" id="error"></div>
+
+      <div id="content" class="stack hidden">
+        <header class="page-header">
+          <div>
+            <h1 class="page-title" id="title"></h1>
+            <p class="page-sub" id="sub"></p>
+          </div>
+          <div class="actions">
+            <a class="btn btn-secondary" id="download" aria-disabled="true" target="_blank" rel="noopener"><span data-icon="download"></span>ดาวน์โหลดรูป</a>
+          </div>
+        </header>
+
+        <div class="detail">
+          <div class="stack">
+            <section class="card">
+              <div class="card-row">
+                <h2 class="card-title" id="capture-title">รูปที่ถ่าย</h2>
+                <label class="switch"><input type="checkbox" id="toggle-boxes" checked>แสดง bounding box</label>
+              </div>
+              <div class="capture" id="capture"></div>
+              <div class="thumbs" id="thumbs"></div>
+            </section>
+          </div>
+
+          <div class="stack">
+            <section class="card tight">
+              <h2 class="card-title">สรุปผล</h2>
+              <div id="summary" class="stack" style="gap:12px"></div>
+            </section>
+            <section class="card tight">
+              <h2 class="card-title" id="det-title">ผลตรวจจับ PPE</h2>
+              <div id="detections" class="stack" style="gap:12px"></div>
+            </section>
+            <section class="card tight no-print" id="review">
+              <h2 class="card-title">ตรวจทานผล AI</h2>
+              <p class="muted" style="font-size:13px" data-review-hint></p>
+              <p class="small" data-review-status></p>
+              <!-- ซ่อนไว้ก่อน setupReview จะเปิดให้เฉพาะ admin -->
+              <div class="review-actions hidden">
+                <button class="btn btn-secondary btn-review ok" type="button" data-review="correct"><span data-icon="check"></span>ถูกต้อง</button>
+                <button class="btn btn-secondary btn-review bad" type="button" data-review="incorrect"><span data-icon="x"></span>AI ผิด</button>
+              </div>
+              <p class="muted small hidden" data-review-msg role="status"></p>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="js/mock-data.js"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/alerts.js"></script>
+  <script src="js/review.js"></script>
+  <script src="js/inspection.js"></script>
+</body>
+</html>

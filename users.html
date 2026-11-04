@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>จัดการผู้ใช้ · PPE Inspect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-pending">
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+
+    <main class="main">
+      <header class="page-header">
+        <div>
+          <h1 class="page-title">จัดการผู้ใช้</h1>
+          <p class="page-sub">ทุกคนในรายชื่อเป็นผู้ดูแลระบบ (admin) และเข้าเว็บด้วยบัญชี Google ของอีเมลนั้น</p>
+        </div>
+        <div class="actions">
+          <button class="btn btn-primary" id="add-open" type="button"><span data-icon="plus"></span>เพิ่มสมาชิก</button>
+        </div>
+      </header>
+
+      <div class="banner banner-info"><span data-icon="info"></span>
+        <span class="grow">แอป Google ยังอยู่โหมด Testing อีเมลที่เพิ่มใหม่ต้องเพิ่มใน Google Cloud → Audience → Test users ด้วย จึงจะ login ได้</span>
+      </div>
+
+      <div class="banners" id="error"></div>
+
+      <section class="card flush">
+        <div class="card-head" style="flex-wrap:wrap">
+          <h2 class="card-title" id="member-count">สมาชิก</h2>
+          <label class="field field-search">
+            <span data-icon="search"></span>
+            <input type="search" id="search" placeholder="ค้นหาอีเมล" aria-label="ค้นหาอีเมล">
+          </label>
+        </div>
+        <div class="table-wrap">
+          <table class="table" style="min-width:720px">
+            <thead><tr><th>สมาชิก</th><th style="width:110px">สิทธิ์</th><th style="width:150px">เพิ่มเมื่อ</th><th style="width:230px">เพิ่มโดย</th><th style="width:110px; text-align:right">จัดการ</th></tr></thead>
+            <tbody id="members"><tr><td colspan="5" class="empty">กำลังโหลด…</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+
+      <p class="muted small">ระบบต้องมีสมาชิกอย่างน้อย 1 คนเสมอ และลบบัญชีของตัวเองไม่ได้ คนที่ถูกลบจะดึงข้อมูลไม่ได้ทันที</p>
+    </main>
+  </div>
+
+  <dialog class="modal" id="add-dialog" aria-labelledby="add-title">
+    <form method="dialog" id="add-form" novalidate>
+      <div class="modal-head">
+        <div>
+          <h2 class="modal-title" id="add-title">เพิ่มสมาชิก</h2>
+          <p class="muted">สมาชิกใหม่จะเป็นผู้ดูแลระบบ (admin)</p>
+        </div>
+        <button class="modal-close" type="button" data-close aria-label="ปิด"><span data-icon="x"></span></button>
+      </div>
+      <div class="form-field">
+        <label for="new-email">อีเมล Google</label>
+        <span class="field"><span data-icon="mail"></span><input id="new-email" type="email" autocomplete="off" placeholder="name@example.com" required style="flex:1"></span>
+        <span class="form-hint">ใช้อีเมลเดียวกับที่จะ login ด้วย Google</span>
+        <span class="form-error hidden" id="add-error" role="alert"></span>
+      </div>
+      <div class="perm-box">
+        <strong>สิทธิ์ของสมาชิก</strong>
+        <span><span data-icon="check"></span>ดูแดชบอร์ด ประวัติการตรวจ และอุปกรณ์</span>
+        <span><span data-icon="check"></span>ตรวจทานผล AI</span>
+        <span><span data-icon="check"></span>เพิ่มและลบสมาชิก</span>
+      </div>
+      <div class="note-warn"><span data-icon="info"></span><span>อย่าลืมเพิ่มอีเมลนี้ใน Google Cloud → Test users ด้วย</span></div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" type="button" data-close>ยกเลิก</button>
+        <button class="btn btn-primary" type="submit" id="add-submit"><span data-icon="plus"></span>เพิ่มสมาชิก</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="modal" id="delete-dialog" aria-labelledby="delete-title">
+    <form method="dialog" id="delete-form">
+      <div class="modal-head">
+        <h2 class="modal-title" id="delete-title">ลบสมาชิก</h2>
+        <button class="modal-close" type="button" data-close aria-label="ปิด"><span data-icon="x"></span></button>
+      </div>
+      <p>ลบ <strong id="delete-email"></strong> ออกจากรายชื่อ? คนนี้จะเข้าเว็บไม่ได้อีกจนกว่าจะเพิ่มกลับมา</p>
+      <span class="form-error hidden" id="delete-error" role="alert"></span>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" type="button" data-close>ยกเลิก</button>
+        <button class="btn btn-danger" type="submit" id="delete-submit"><span data-icon="trash"></span>ลบ</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="js/mock-data.js"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/alerts.js"></script>
+  <script src="js/users.js"></script>
+</body>
+</html>

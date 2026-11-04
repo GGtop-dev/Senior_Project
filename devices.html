@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>อุปกรณ์ · PPE Inspect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-pending">
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+
+    <main class="main">
+      <header class="page-header">
+        <div>
+          <h1 class="page-title">อุปกรณ์</h1>
+          <p class="page-sub">Raspberry Pi 5 ส่ง heartbeat ทุก 30 วินาที · ขาดเกิน 3 นาทีถือว่าออฟไลน์</p>
+        </div>
+        <div class="actions">
+          <span class="muted small" id="updated"></span>
+          <button class="btn btn-secondary" id="refresh" type="button"><span data-icon="refresh"></span>รีเฟรชสถานะ</button>
+        </div>
+      </header>
+
+      <div class="banners" id="error"></div>
+
+      <section class="device-grid" id="devices"><p class="muted">กำลังโหลด…</p></section>
+
+      <section class="card flush">
+        <div class="card-head">
+          <h2 class="card-title">Error log / เหตุการณ์อุปกรณ์</h2>
+          <span class="muted">ล่าสุด 20 รายการ</span>
+        </div>
+        <div class="table-wrap">
+          <table class="table">
+            <thead><tr><th style="width:170px">เวลา</th><th style="width:150px">อุปกรณ์</th><th style="width:180px">ประเภท</th><th>ข้อความ</th></tr></thead>
+            <tbody id="events"><tr><td colspan="4" class="empty">กำลังโหลด…</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="js/mock-data.js"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/alerts.js"></script>
+  <script src="js/devices.js"></script>
+</body>
+</html>

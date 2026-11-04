@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>แดชบอร์ด · PPE Inspect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-pending">
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+
+    <main class="main">
+      <header class="page-header">
+        <div>
+          <h1 class="page-title">แดชบอร์ด</h1>
+          <p class="page-sub" id="today-label">ภาพรวมการตรวจ PPE วันนี้</p>
+        </div>
+        <div class="actions">
+          <span class="pill" id="device-pill">กำลังโหลดสถานะอุปกรณ์…</span>
+          <a class="btn btn-primary" id="export-link" href="history.html"><span data-icon="download"></span>Export รายงาน</a>
+        </div>
+      </header>
+
+      <div class="banners" id="error"></div>
+      <div class="banners" id="banners"></div>
+
+      <section class="stats">
+        <article class="card stat">
+          <div class="stat-head"><span>ตรวจวันนี้</span><span class="stat-icon tone-primary" data-icon="activity"></span></div>
+          <div class="stat-value" id="stat-total">–</div>
+          <div class="stat-caption" id="cap-total">&nbsp;</div>
+        </article>
+        <article class="card stat">
+          <div class="stat-head"><span>อัตราผ่าน</span><span class="stat-icon tone-success" data-icon="check"></span></div>
+          <div class="stat-value" id="stat-rate">–</div>
+          <div class="stat-caption" id="cap-rate">&nbsp;</div>
+        </article>
+        <article class="card stat">
+          <div class="stat-head"><span>ไม่ผ่าน</span><span class="stat-icon tone-danger" data-icon="x"></span></div>
+          <div class="stat-value" id="stat-failed">–</div>
+          <div class="stat-caption" id="cap-failed">&nbsp;</div>
+        </article>
+        <article class="card stat">
+          <div class="stat-head"><span>ตรวจไม่ได้</span><span class="stat-icon tone-warning" data-icon="alert"></span></div>
+          <div class="stat-value" id="stat-und">–</div>
+          <div class="stat-caption">ครบ 3 รอบแต่ยังตัดสินไม่ได้</div>
+        </article>
+      </section>
+
+      <section class="grid-2">
+        <article class="card">
+          <div class="card-row">
+            <h2 class="card-title">ผลการตรวจรายชั่วโมง</h2>
+            <div class="legend">
+              <span><i style="background:var(--success)"></i>ผ่าน</span>
+              <span><i style="background:var(--danger)"></i>ไม่ผ่าน</span>
+              <span><i style="background:var(--warning)"></i>ตรวจไม่ได้</span>
+            </div>
+          </div>
+          <div class="chart-box"><canvas id="hourly-chart" role="img" aria-label="กราฟผลการตรวจรายชั่วโมงของวันนี้"></canvas></div>
+        </article>
+        <article class="card">
+          <h2 class="card-title">PPE ที่ขาดบ่อย (วันนี้)</h2>
+          <div class="bar-list" id="missing-list"><p class="muted">กำลังโหลด…</p></div>
+        </article>
+      </section>
+
+      <section class="card flush">
+        <div class="card-head">
+          <h2 class="card-title">การตรวจล่าสุด</h2>
+          <a class="link" href="history.html">ดูทั้งหมด →</a>
+        </div>
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr><th>เวลา</th><th>จุดตรวจ</th><th>ผลตรวจ</th><th>PPE ที่ขาด</th><th>จำนวนรอบ</th><th>รุ่นโมเดล</th><th>Confidence</th><th></th></tr>
+            </thead>
+            <tbody id="recent-body"><tr><td colspan="8" class="empty">กำลังโหลด…</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js"></script>
+  <script src="js/mock-data.js"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/alerts.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Review Tests · PPE Inspect</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    body { padding: 24px; background: #fff; }
+    #summary { font-size: 18px; font-weight: 600; margin-bottom: 16px; }
+    #summary[data-status="pass"] { color: var(--success); }
+    #summary[data-status="fail"] { color: var(--danger); }
+    #results { list-style: none; padding: 0; margin: 0; font-size: 14px; }
+    #results li { padding: 6px 0; border-bottom: 1px solid #eee; }
+    #results li.fail { color: var(--danger); }
+    #results pre { margin: 4px 0 0 20px; white-space: pre-wrap; font-size: 12px; }
+    #fixture { display: none; }
+  </style>
+</head>
+<body>
+  <!-- unit test ของปุ่มตรวจทานผล AI (api.review + setupReview) ไม่เชื่อมต่อ Supabase จริง
+       เปิดผ่าน local server: python -m http.server 5500 --bind 127.0.0.1 ในโฟลเดอร์ web
+       แล้วเข้า http://127.0.0.1:5500/tests/review.test.html -->
+  <div id="summary" data-status="running">กำลังทดสอบ…</div>
+  <ul id="results"></ul>
+
+  <!-- แม่แบบ section เดียวกับใน inspection.html ทุก test สร้างสำเนาใหม่ -->
+  <template id="review-template">
+    <section class="card tight no-print" id="review">
+      <h2 class="card-title">ตรวจทานผล AI</h2>
+      <p class="muted" data-review-hint></p>
+      <p class="small" data-review-status></p>
+      <div class="review-actions hidden">
+        <button class="btn btn-secondary btn-review ok" type="button" data-review="correct">ถูกต้อง</button>
+        <button class="btn btn-secondary btn-review bad" type="button" data-review="incorrect">AI ผิด</button>
+      </div>
+      <p class="muted small hidden" data-review-msg role="status"></p>
+    </section>
+  </template>
+  <div id="fixture"></div>
+
+  <!-- แทน supabase-js ด้วย client ปลอมก่อนโหลด js/supabase.js -->
+  <script src="fake-supabase.js"></script>
+  <script src="../js/mock-data.js"></script>
+  <script src="../js/supabase.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/review.js"></script>
+  <script src="runner.js"></script>
+  <script src="review.test.js"></script>
+</body>
+</html>

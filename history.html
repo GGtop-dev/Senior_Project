@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ประวัติการตรวจ · PPE Inspect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-pending">
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+
+    <main class="main">
+      <header class="page-header">
+        <div>
+          <h1 class="page-title">ประวัติการตรวจ</h1>
+          <p class="page-sub" id="sub">กำลังโหลด…</p>
+        </div>
+        <div class="actions">
+          <button class="btn btn-secondary" id="export-pdf" type="button"><span data-icon="download"></span>Export PDF</button>
+          <button class="btn btn-primary" id="export-csv" type="button"><span data-icon="download"></span>Export CSV</button>
+        </div>
+      </header>
+
+      <section class="card filters" aria-label="ตัวกรอง">
+        <label class="field field-search">
+          <span data-icon="search"></span>
+          <input id="f-search" type="search" placeholder="ค้นหารหัสการตรวจ" aria-label="ค้นหารหัสการตรวจ">
+        </label>
+        <div class="field field-date">
+          <span data-icon="calendar"></span>
+          <input id="f-from" type="date" aria-label="ตั้งแต่วันที่">
+          <span class="field-sep">–</span>
+          <input id="f-to" type="date" aria-label="ถึงวันที่">
+        </div>
+        <label class="field">
+          <select id="f-device" aria-label="จุดตรวจ"><option value="">จุดตรวจ: ทั้งหมด</option></select>
+        </label>
+        <label class="field">
+          <select id="f-status" aria-label="ผลตรวจ">
+            <option value="">ผลตรวจ: ทั้งหมด</option>
+            <option value="passed">ผ่าน</option>
+            <option value="failed">ไม่ผ่าน</option>
+            <option value="undetermined">ตรวจไม่ได้</option>
+          </select>
+        </label>
+        <span class="grow"></span>
+        <button class="link" id="f-clear" type="button">ล้างตัวกรอง</button>
+      </section>
+
+      <div class="tabs" id="tabs" role="tablist" aria-label="กรองตามผลตรวจ"></div>
+      <div class="banners" id="error"></div>
+
+      <section class="card flush">
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr><th>เวลา</th><th>จุดตรวจ</th><th>ผลตรวจ</th><th>PPE ที่ขาด</th><th>จำนวนรอบ</th><th>รุ่นโมเดล</th><th>Confidence</th><th></th></tr>
+            </thead>
+            <tbody id="rows"><tr><td colspan="8" class="empty">กำลังโหลด…</td></tr></tbody>
+          </table>
+        </div>
+        <div class="pagination">
+          <span class="info" id="page-info"></span>
+          <div class="pages" id="pages"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="js/mock-data.js"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/alerts.js"></script>
+  <script src="js/history.js"></script>
+</body>
+</html>
