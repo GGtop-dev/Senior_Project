@@ -20,7 +20,7 @@
   --sidebar-hover: #1E293B;
   --sidebar-text: #CBD5E1;
   --radius: 12px;
-  --font: 'IBM Plex Sans Thai', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font: 'Inter', 'Noto Sans Thai', system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
 * { box-sizing: border-box; }
