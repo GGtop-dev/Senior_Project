@@ -56,7 +56,7 @@ async function signOut() {
 // ---------- Data ----------
 
 const INSPECTION_SELECT =
-  '*, devices(name, location), captures(attempt_no, detections, inference_ms, image_path, captured_at)';
+  '*, devices(name, location), captures(attempt_no, detections, inference_ms, image_path, image_deleted_at, captured_at)';
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const NO_MATCH_ID = '00000000-0000-0000-0000-000000000000';
 
@@ -216,6 +216,14 @@ const api = {
     const { data, error } = await q.order('created_at', { ascending: false }).limit(500);
     if (error) throw error;
     return data;
+  },
+
+  // รูปที่จะถูกลบตามนโยบายเก็บ 30 วัน ในวันนี้ถึงอีก 7 วัน: [{ delete_on: 'YYYY-MM-DD', images }]
+  async retentionUpcoming() {
+    if (DEMO) return [];
+    const { data, error } = await sb.rpc('retention_upcoming');
+    if (error) throw error;
+    return data || [];
   },
 
   // ---------- สมาชิก (profiles) ----------

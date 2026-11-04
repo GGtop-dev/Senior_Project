@@ -10,13 +10,28 @@ const BELL_REFRESH_MS = 60 * 1000;
 const BELL_MAX_ITEMS = 5;
 const ALERT_SEEN_KEY = 'ppe.alerts.seenAt';
 const ALERT_EVENT_TYPES = ['camera_error', 'speaker_error'];
+// เก็บรูป 30 วันแล้วลบอัตโนมัติ (ฝั่งฐานข้อมูล) แจ้งเตือนก่อนวันลบ 7 วันและ 1 วัน นับวันตามเวลาไทย
+const RETENTION_DAYS = 30;
+const RETENTION_NOTICE_DAYS = [7, 1];
+const BKK_OFFSET_MS = 7 * 60 * 60 * 1000; // ไทยไม่มี daylight saving
 
 const ALERT_TYPES = {
   repeat_fail: { label: 'ไม่ผ่านซ้ำ', icon: 'alert', tone: 'danger' },
   offline: { label: 'ขาดการติดต่อ', icon: 'cpu', tone: 'danger' },
   camera: { label: 'กล้องเสีย', icon: 'camera', tone: 'warning' },
   speaker: { label: 'ลำโพงเสีย', icon: 'speaker', tone: 'warning' },
+  retention: { label: 'รูปใกล้ถูกลบ', icon: 'trash', tone: 'warning' },
 };
+
+// ---------- วันที่ตามเวลาไทย ('YYYY-MM-DD') ----------
+
+const bkkDate = (ms) => new Date(ms + BKK_OFFSET_MS).toISOString().slice(0, 10);
+const shiftDate = (ymd, days) => new Date(Date.parse(ymd + 'T00:00:00Z') + days * 86400000).toISOString().slice(0, 10);
+const daysUntil = (ymd, now) => Math.round((Date.parse(ymd + 'T00:00:00Z') - Date.parse(bkkDate(now) + 'T00:00:00Z')) / 86400000);
+const bkkMidnightIso = (ymd) => new Date(Date.parse(ymd + 'T00:00:00+07:00')).toISOString();
+const fmtThaiDate = (ymd) => fmtDate(ymd + 'T12:00:00+07:00');
+// วันที่รูปที่ถ่ายเวลา iso จะถูกลบ
+const retentionDeleteOn = (iso) => shiftDate(bkkDate(new Date(iso).getTime()), RETENTION_DAYS);
 
 // ---------- อ่านแล้ว ----------
 
@@ -39,7 +54,8 @@ const isUnread = (a, seenAt = alertsSeenAt()) => new Date(a.at).getTime() > seen
 
 // failed: inspections ที่ไม่ผ่าน (select 'people'); devices: ทุกเครื่อง; events: device_events ประเภทกล้อง/ลำโพง
 // คืนรายการเรียงจากใหม่ไปเก่า: { id, type, title, detail, missing, deviceId, deviceName, at, href, linkText }
-function buildAlerts({ failed = [], devices = [], events = [], now = Date.now() }) {
+// retention: [{ delete_on, images }] จาก api.retentionUpcoming()
+function buildAlerts({ failed = [], devices = [], events = [], retention = [], now = Date.now() }) {
   const deviceName = Object.fromEntries(devices.map((d) => [d.id, d.name]));
   const alerts = [];
 
@@ -117,24 +133,53 @@ function buildAlerts({ failed = [], devices = [], events = [], now = Date.now() 
     });
   }
 
+  // รูปใกล้ถูกลบ: แจ้งตอน 00:00 ของวันที่เหลือ 7 วัน และวันที่เหลือ 1 วัน (แจ้งแล้วอยู่จนกว่าจะลบ)
+  for (const r of retention) {
+    const images = Number(r.images) || 0;
+    const left = daysUntil(r.delete_on, now);
+    if (!images || left < 0) continue;
+    const shotOn = shiftDate(r.delete_on, -RETENTION_DAYS);
+    for (const d of RETENTION_NOTICE_DAYS) {
+      if (left > d) continue;
+      alerts.push({
+        id: `retention:${r.delete_on}:${d}`,
+        type: 'retention',
+        tone: d <= 1 ? 'danger' : undefined,
+        title: `รูปการตรวจวันที่ ${fmtThaiDate(shotOn)} (${fmtNum(images)} รูป) จะถูกลบ${d <= 1 ? 'พรุ่งนี้' : `ในอีก ${d} วัน`}`,
+        detail: `ลบอัตโนมัติวันที่ ${fmtThaiDate(r.delete_on)} ตามนโยบายเก็บรูป ${RETENTION_DAYS} วัน ดาวน์โหลดรูปที่ต้องเก็บเป็นหลักฐานก่อนวันนั้น`,
+        missing: [],
+        deviceId: null,
+        deviceName: '',
+        at: bkkMidnightIso(shiftDate(r.delete_on, -d)),
+        href: `history.html?from=${shotOn}&to=${shotOn}`,
+        linkText: 'ดูการตรวจวันนั้น',
+      });
+    }
+  }
+
   return alerts.sort((a, b) => new Date(b.at) - new Date(a.at));
 }
 
 // ดึงข้อมูลแล้วสร้างแจ้งเตือนตั้งแต่ from; คืน { alerts, devices }
+// แจ้งเตือนรูปใกล้ถูกลบนับเป็นเหตุการณ์ จึงแสดงเฉพาะที่แจ้งตั้งแต่ from
+// ถ้าดึงข้อมูลรูปไม่สำเร็จ (เช่นยังไม่ได้รัน schema.sql ใหม่) แจ้งเตือนอื่นยังแสดงได้
 async function loadAlerts(from) {
-  const [failed, devices, events] = await Promise.all([
+  const [failed, devices, events, retention] = await Promise.all([
     api.inspections({ from, status: 'failed', select: 'people' }),
     api.devices(),
     api.eventsSince(from, ALERT_EVENT_TYPES),
+    api.retentionUpcoming().catch((err) => { console.warn('retention_upcoming:', err); return []; }),
   ]);
-  return { alerts: buildAlerts({ failed: failed.rows, devices, events }), devices };
+  const alerts = buildAlerts({ failed: failed.rows, devices, events, retention })
+    .filter((a) => a.type !== 'retention' || new Date(a.at) >= from);
+  return { alerts, devices };
 }
 
 // ---------- HTML ที่หน้าแจ้งเตือนและกระดิ่งใช้ร่วมกัน ----------
 
 function alertIconHtml(a, size = '') {
   const t = ALERT_TYPES[a.type];
-  return `<span class="alert-icon tone-${t.tone}${size}">${icon(t.icon)}</span>`;
+  return `<span class="alert-icon tone-${a.tone || t.tone}${size}">${icon(t.icon)}</span>`;
 }
 
 function missingTagsHtml(a) {
@@ -178,7 +223,7 @@ function renderBell() {
         <span class="bell-text">
           <span class="bell-title">${esc(a.title)}</span>
           ${a.missing.length ? `<span class="bell-detail">ขาด${esc(a.missing.map(ppeLabel).join(', '))}</span>` : a.detail ? `<span class="bell-detail">${esc(a.detail)}</span>` : ''}
-          <span class="bell-meta">${esc(a.deviceName)} · ${timeAgo(a.at)}</span>
+          <span class="bell-meta">${[a.deviceName, timeAgo(a.at)].filter(Boolean).map(esc).join(' · ')}</span>
         </span>
       </a>`).join('');
   }

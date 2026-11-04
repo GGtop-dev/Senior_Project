@@ -93,7 +93,8 @@
     }).join('');
     const missing = missingIn(c);
     const note = c.image_path
-      ? `โหลดผ่าน signed URL · หมดอายุใน ${SIGNED_URL_TTL / 60} นาที`
+      ? `โหลดผ่าน signed URL · หมดอายุใน ${SIGNED_URL_TTL / 60} นาที · รูปจะถูกลบอัตโนมัติ ${fmtThaiDate(retentionDeleteOn(c.captured_at))}`
+      : c.image_deleted_at ? `ลบรูปแล้วเมื่อ ${fmtDateTime(c.image_deleted_at)} ตามนโยบายเก็บรูป ${RETENTION_DAYS} วัน`
       : DEMO ? 'โหมดตัวอย่าง · ไม่มีไฟล์รูปจริง' : 'ไม่มีไฟล์รูปของรอบนี้';
 
     box.innerHTML = `

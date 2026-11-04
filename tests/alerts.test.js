@@ -183,6 +183,74 @@ test('C19 loadAlerts: Supabase ตอบ error → throw', async () => {
   assertEqual(err?.message, 'boom');
 });
 
+// ---------- รูปใกล้ถูกลบ (เก็บ 30 วัน แจ้งก่อน 7 วันและ 1 วัน) ----------
+
+const BKK_NOW = Date.parse('2026-11-05T10:00:00+07:00');
+const retentionAlerts = (rows, now = BKK_NOW) => ofType(buildAlerts({ retention: rows, now }), 'retention');
+
+test('C20 เหลือ 7 วันก่อนลบ → แจ้ง 1 รายการตอน 00:00 วันนี้ (เวลาไทย) ลิงก์ไปประวัติของวันที่ถ่าย', () => {
+  const r = retentionAlerts([{ delete_on: '2026-11-12', images: 124 }]);
+  assertEqual(r.length, 1);
+  assertEqual(r[0].at, new Date('2026-11-05T00:00:00+07:00').toISOString(), 'เวลาแจ้ง');
+  assert(r[0].title.includes('ในอีก 7 วัน') && r[0].title.includes('124 รูป'), r[0].title);
+  assertEqual(r[0].href, 'history.html?from=2026-10-13&to=2026-10-13', 'วันที่ถ่าย = วันลบ - 30');
+  assertEqual(r[0].tone, undefined, 'ใช้สีเตือนปกติ');
+});
+
+test('C21 เหลือ 3 วัน → มีแค่แจ้งเตือน 7 วัน (แจ้งไปเมื่อ 4 วันก่อน) ยังไม่ถึงแจ้ง 1 วัน', () => {
+  const r = retentionAlerts([{ delete_on: '2026-11-08', images: 5 }]);
+  assertEqual(r.map((a) => a.id), ['retention:2026-11-08:7']);
+  assertEqual(r[0].at, new Date('2026-11-01T00:00:00+07:00').toISOString());
+});
+
+test('C22 เหลือ 1 วัน → แจ้งทั้ง 7 วันและ 1 วัน แจ้ง 1 วันเป็นสีแดงและขึ้นว่า "พรุ่งนี้"', () => {
+  const r = retentionAlerts([{ delete_on: '2026-11-06', images: 2 }]);
+  assertEqual(r.map((a) => a.id), ['retention:2026-11-06:1', 'retention:2026-11-06:7'], 'เรียงใหม่ไปเก่า');
+  assertEqual(r[0].tone, 'danger');
+  assert(r[0].title.endsWith('จะถูกลบพรุ่งนี้'), r[0].title);
+  assertEqual(r[0].at, new Date('2026-11-05T00:00:00+07:00').toISOString());
+});
+
+test('C23 เหลือ 8 วัน / ไม่มีรูป / เลยวันลบแล้ว → ไม่แจ้ง', () => {
+  assertEqual(retentionAlerts([
+    { delete_on: '2026-11-13', images: 10 },
+    { delete_on: '2026-11-07', images: 0 },
+    { delete_on: '2026-11-04', images: 10 },
+  ]).length, 0);
+});
+
+test('C24 วันลบคือวันนี้ (ก่อนตี 3 ยังไม่ถูกลบ) → ยังแสดงทั้งสองแจ้งเตือน', () => {
+  assertEqual(retentionAlerts([{ delete_on: '2026-11-05', images: '3' }]).length, 2);
+});
+
+test('C25 นับวันตามเวลาไทย: 00:30 น. วันที่ 6 (ยังเป็นวันที่ 5 ใน UTC) เหลือ 7 วันถึงวันที่ 13', () => {
+  const now = Date.parse('2026-11-06T00:30:00+07:00');
+  const r = retentionAlerts([{ delete_on: '2026-11-13', images: 1 }], now);
+  assertEqual(r.length, 1);
+  assertEqual(r[0].at, new Date('2026-11-06T00:00:00+07:00').toISOString());
+});
+
+test('C26 วันที่ลบของรูป = วันที่ถ่าย (เวลาไทย) + 30', () => {
+  assertEqual(retentionDeleteOn('2026-11-05T20:00:00Z'), '2026-12-06', '03:00 น. วันที่ 6 เวลาไทย');
+  assertEqual(retentionDeleteOn('2026-11-05T16:59:00Z'), '2026-12-05', '23:59 น. วันที่ 5 เวลาไทย');
+});
+
+test('C27 loadAlerts เรียก rpc retention_upcoming และแสดงเฉพาะแจ้งเตือนรูปที่แจ้งในช่วงเวลาที่เลือก', async () => {
+  const tomorrow = shiftDate(bkkDate(Date.now()), 1);
+  fakeSb.respond = (call) => ({ data: call.table === 'rpc:retention_upcoming' ? [{ delete_on: tomorrow, images: 4 }] : [], error: null, count: 0 });
+  const { alerts } = await loadAlerts(new Date(Date.now() - 24 * 3600 * 1000));
+  assert(fakeSb.calls.some((c) => c.table === 'rpc:retention_upcoming'), 'ต้องเรียก rpc');
+  assertEqual(alerts.map((a) => a.id), [`retention:${tomorrow}:1`], 'แจ้ง 7 วัน (เมื่อ 6 วันก่อน) อยู่นอกช่วง 24 ชม.');
+});
+
+test('C28 rpc retention_upcoming error (ยังไม่ได้รัน schema ใหม่) → แจ้งเตือนอื่นยังโหลดได้', async () => {
+  fakeSb.respond = (call) => (call.table === 'rpc:retention_upcoming'
+    ? { data: null, error: { message: 'function not found' } }
+    : { data: call.table === 'devices' ? [{ ...DEV_A, last_heartbeat_at: minAgo(10) }] : [], error: null, count: 0 });
+  const { alerts } = await loadAlerts(new Date(Date.now() - 24 * 3600 * 1000));
+  assertEqual(alerts.map((a) => a.type), ['offline']);
+});
+
 // =====================================================================
 // ส่วน D: กระดิ่ง
 // =====================================================================
@@ -278,6 +346,15 @@ test('D10 ยังไม่มีแจ้งเตือน → ข้อค�
 test('D11 กำลังโหลดครั้งแรก → "กำลังโหลด…"', () => {
   const ui = mountBell([], { loaded: false });
   assert(ui.panel.textContent.includes('กำลังโหลด'));
+});
+
+
+test('D12 แจ้งเตือนรูปใกล้ถูกลบในกระดิ่ง: ไม่มีชื่อเครื่องนำหน้า และแจ้ง 1 วันใช้ไอคอนสีแดง', () => {
+  const [a] = retentionAlerts([{ delete_on: '2026-11-06', images: 2 }]);
+  const ui = mountBell([a]);
+  const meta = ui.panel.querySelector('.bell-meta').textContent;
+  assert(!meta.startsWith(' ·') && !meta.includes(' ·  '), 'meta: ' + meta);
+  assert(ui.panel.querySelector('.alert-icon.tone-danger'), 'ไอคอนสีแดง');
 });
 
 runTests();

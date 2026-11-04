@@ -20,6 +20,11 @@ const fakeSb = {
     builder.then = (onOk, onErr) => Promise.resolve().then(() => fakeSb.respond(call)).then(onOk, onErr);
     return builder;
   },
+  rpc(fn, args) {
+    const call = { table: 'rpc:' + fn, ops: [['rpc', fn, args]] };
+    fakeSb.calls.push(call);
+    return { then: (onOk, onErr) => Promise.resolve().then(() => fakeSb.respond(call)).then(onOk, onErr) };
+  },
   auth: { getSession: async () => ({ data: { session: null } }), signOut: async () => {} },
   storage: { from: () => ({ createSignedUrl: async () => ({ data: null, error: null }) }) },
   channel: () => ({ on() { return this; }, subscribe() { return this; } }),
