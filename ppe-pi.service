@@ -1,0 +1,17 @@
+# ติดตั้ง: sudo cp ppe-pi.service /etc/systemd/system/ && sudo systemctl enable --now ppe-pi
+# ดู log: journalctl -u ppe-pi -f
+[Unit]
+Description=PPE inspection (YOLO + Supabase)
+After=network-online.target sound.target
+Wants=network-online.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/ppe-pi
+ExecStart=/home/pi/ppe-pi/.venv/bin/python -u main.py
+Restart=always
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
