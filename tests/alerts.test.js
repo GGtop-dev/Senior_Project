@@ -97,18 +97,19 @@ test('C11 เครื่องที่ไม่เคยส่ง heartbeat �
   assertEqual(r[0].detail, 'ยังไม่เคยส่ง heartbeat');
 });
 
-test('C12 device_events camera_error / speaker_error → แจ้งเตือน ส่วนประเภทอื่นไม่แจ้ง', () => {
+test('C12 device_events กล้อง / ลำโพง / อุณหภูมิ / เน็ตหลุด → แจ้งเตือน ส่วน boot ไม่แจ้ง', () => {
   const events = [
     { id: 1, device_id: DEV_A.id, type: 'camera_error', message: 'อ่านภาพไม่สำเร็จ', created_at: minAgo(5), devices: { name: DEV_A.name } },
     { id: 2, device_id: DEV_B.id, type: 'speaker_error', message: 'ไม่พบอุปกรณ์เสียง', created_at: minAgo(4) },
     { id: 3, device_id: DEV_A.id, type: 'boot', message: 'เริ่มระบบ', created_at: minAgo(3) },
     { id: 4, device_id: DEV_A.id, type: 'high_temp', message: 'ร้อน', created_at: minAgo(2) },
+    { id: 5, device_id: DEV_B.id, type: 'network_down', message: 'อินเทอร์เน็ตหลุด 1 นาที', created_at: minAgo(1) },
   ];
   const alerts = buildAlerts({ devices: [DEV_A, DEV_B], events });
-  assertEqual(alerts.map((a) => a.type), ['speaker', 'camera']);
-  assertEqual(alerts[1].title, `กล้องของ ${DEV_A.name} อ่านภาพไม่สำเร็จ`);
-  assertEqual(alerts[0].title, `ลำโพงของ ${DEV_B.name} ไม่ทำงาน`, 'ใช้ชื่อจาก devices ถ้า event ไม่มี embed');
-  assertEqual(alerts[0].detail, 'ไม่พบอุปกรณ์เสียง');
+  assertEqual(alerts.map((a) => a.type), ['network', 'high_temp', 'speaker', 'camera'], 'เรียงใหม่ → เก่า');
+  assertEqual(alerts[3].title, `กล้องของ ${DEV_A.name} อ่านภาพไม่สำเร็จ`);
+  assertEqual(alerts[2].title, `ลำโพงของ ${DEV_B.name} ไม่ทำงาน`, 'ใช้ชื่อจาก devices ถ้า event ไม่มี embed');
+  assertEqual(alerts[2].detail, 'ไม่พบอุปกรณ์เสียง');
 });
 
 test('C13 รวมทุกประเภท เรียงจากใหม่ไปเก่า และ id ไม่ซ้ำ', () => {
@@ -161,7 +162,7 @@ test('C17 localStorage ใช้ไม่ได้ (private mode) → ไม่ 
 
 // ---------- loadAlerts ----------
 
-test('C18 loadAlerts ส่ง request ถูก: inspections เฉพาะ failed + ข้อมูลพนักงาน, device_events เฉพาะกล้อง/ลำโพง', async () => {
+test('C18 loadAlerts ส่ง request ถูก: inspections เฉพาะ failed + ข้อมูลพนักงาน, device_events เฉพาะประเภทใน ALERT_EVENT_TYPES', async () => {
   fakeSb.respond = (call) => ({ data: call.table === 'devices' ? [DEV_A] : [], error: null, count: 0 });
   const from = new Date(NOW - 24 * 3600 * 1000);
   const { alerts, devices } = await loadAlerts(from);
@@ -172,7 +173,7 @@ test('C18 loadAlerts ส่ง request ถูก: inspections เฉพาะ fa
   assert(ins.ops.some((o) => o[0] === 'eq' && o[1] === 'status' && o[2] === 'failed'), 'กรอง status = failed');
   assert(ins.ops.some((o) => o[0] === 'gte' && o[1] === 'started_at' && o[2] === from.toISOString()), 'กรองเวลา');
   assert(/employees\(/.test(ins.ops.find((o) => o[0] === 'select')[1]), 'ต้อง embed employees');
-  assert(ev.ops.some((o) => o[0] === 'in' && o[1] === 'type' && JSON.stringify(o[2]) === JSON.stringify(['camera_error', 'speaker_error'])), 'กรองประเภท event');
+  assert(ev.ops.some((o) => o[0] === 'in' && o[1] === 'type' && JSON.stringify(o[2]) === JSON.stringify(ALERT_EVENT_TYPES)), 'กรองประเภท event');
   assert(ev.ops.some((o) => o[0] === 'gte' && o[1] === 'created_at'), 'กรองเวลา event');
 });
 
@@ -249,6 +250,42 @@ test('C28 rpc retention_upcoming error (ยังไม่ได้รัน sch
     : { data: call.table === 'devices' ? [{ ...DEV_A, last_heartbeat_at: minAgo(10) }] : [], error: null, count: 0 });
   const { alerts } = await loadAlerts(new Date(Date.now() - 24 * 3600 * 1000));
   assertEqual(alerts.map((a) => a.type), ['offline']);
+});
+
+// ---------- อุณหภูมิสูง / เน็ตหลุด ----------
+
+test('C29 high_temp ของเครื่องที่มี embed devices.name → แจ้ง "อุณหภูมิ CPU สูง"', () => {
+  const msg = 'อุณหภูมิ CPU 78°C เกินเกณฑ์ 75°C';
+  const [a] = buildAlerts({ events: [{ id: 41, device_id: DEV_A.id, type: 'high_temp', message: msg, created_at: minAgo(3), devices: { name: DEV_A.name } }] });
+  assertEqual(a.type, 'high_temp');
+  assertEqual(a.title, `${DEV_A.name} อุณหภูมิ CPU สูง`);
+  assertEqual(a.detail, msg);
+  assertEqual(a.href, 'devices.html');
+  assertEqual(a.id, 'event:41');
+});
+
+test('C30 network_down ไม่มี embed → ใช้ชื่อจาก devices และเวลา = ตอนเริ่มหลุด (created_at)', () => {
+  const at = minAgo(12);
+  const alerts = buildAlerts({ devices: [DEV_B], events: [{ id: 42, device_id: DEV_B.id, type: 'network_down', message: 'อินเทอร์เน็ตหลุด 1 นาที 52 วินาที · พักข้อมูลในคิว', created_at: at }] });
+  assertEqual(alerts.length, 1);
+  assertEqual(alerts[0].type, 'network');
+  assertEqual(alerts[0].title, `${DEV_B.name} อินเทอร์เน็ตหลุด`);
+  assertEqual(alerts[0].at, at);
+});
+
+test('C31 event queue_flush / heartbeat_lost / model_error / boot → ไม่แจ้ง', () => {
+  const events = ['queue_flush', 'heartbeat_lost', 'model_error', 'boot', 'constructor']
+    .map((type, i) => ({ id: 50 + i, device_id: DEV_A.id, type, message: type, created_at: minAgo(i + 1) }));
+  assertEqual(buildAlerts({ devices: [DEV_A], events }), []);
+});
+
+test('C32 ALERT_TYPES ทุก key มี label, tone และ icon ที่มีอยู่ใน ICONS', () => {
+  for (const [key, t] of Object.entries(ALERT_TYPES)) {
+    assert(t.label, `${key}: ไม่มี label`);
+    assert(t.tone, `${key}: ไม่มี tone`);
+    assert(Object.hasOwn(ICONS, t.icon), `${key}: ไม่มีไอคอน ${t.icon} ใน ICONS`);
+  }
+  for (const m of Object.values(EVENT_ALERTS)) assert(ALERT_TYPES[m.type], `EVENT_ALERTS ชี้ไปประเภท ${m.type} ที่ไม่มีใน ALERT_TYPES`);
 });
 
 // =====================================================================

@@ -9,7 +9,7 @@ const BELL_RANGE_MS = 24 * 60 * 60 * 1000;
 const BELL_REFRESH_MS = 60 * 1000;
 const BELL_MAX_ITEMS = 5;
 const ALERT_SEEN_KEY = 'ppe.alerts.seenAt';
-const ALERT_EVENT_TYPES = ['camera_error', 'speaker_error'];
+const ALERT_EVENT_TYPES = ['camera_error', 'speaker_error', 'high_temp', 'network_down'];
 // เก็บรูป 30 วันแล้วลบอัตโนมัติ (ฝั่งฐานข้อมูล) แจ้งเตือนก่อนวันลบ 7 วันและ 1 วัน นับวันตามเวลาไทย
 const RETENTION_DAYS = 30;
 const RETENTION_NOTICE_DAYS = [7, 1];
@@ -20,7 +20,18 @@ const ALERT_TYPES = {
   offline: { label: 'ขาดการติดต่อ', icon: 'cpu', tone: 'danger' },
   camera: { label: 'กล้องเสีย', icon: 'camera', tone: 'warning' },
   speaker: { label: 'ลำโพงเสีย', icon: 'speaker', tone: 'warning' },
+  high_temp: { label: 'อุณหภูมิสูง', icon: 'thermometer', tone: 'warning' },
+  network: { label: 'อินเทอร์เน็ตหลุด', icon: 'wifiOff', tone: 'warning' },
   retention: { label: 'รูปใกล้ถูกลบ', icon: 'trash', tone: 'warning' },
+};
+
+// device_events ที่ขึ้นเป็นแจ้งเตือน: type ของ Pi → ประเภทแจ้งเตือนและหัวข้อ (type อื่นเช่น boot ไม่แจ้ง)
+// network_down: Pi ส่งตอนเน็ตกลับมาแล้ว created_at = เวลาที่เริ่มหลุด
+const EVENT_ALERTS = {
+  camera_error: { type: 'camera', title: (n) => `กล้องของ ${n} อ่านภาพไม่สำเร็จ` },
+  speaker_error: { type: 'speaker', title: (n) => `ลำโพงของ ${n} ไม่ทำงาน` },
+  high_temp: { type: 'high_temp', title: (n) => `${n} อุณหภูมิ CPU สูง` },
+  network_down: { type: 'network', title: (n) => `${n} อินเทอร์เน็ตหลุด` },
 };
 
 // ---------- วันที่ตามเวลาไทย ('YYYY-MM-DD') ----------
@@ -52,7 +63,7 @@ const isUnread = (a, seenAt = alertsSeenAt()) => new Date(a.at).getTime() > seen
 
 // ---------- สร้างรายการแจ้งเตือน ----------
 
-// failed: inspections ที่ไม่ผ่าน (select 'people'); devices: ทุกเครื่อง; events: device_events ประเภทกล้อง/ลำโพง
+// failed: inspections ที่ไม่ผ่าน (select 'people'); devices: ทุกเครื่อง; events: device_events ประเภทใน ALERT_EVENT_TYPES (กล้อง/ลำโพง/อุณหภูมิ/เน็ตหลุด)
 // คืนรายการเรียงจากใหม่ไปเก่า: { id, type, title, detail, missing, deviceId, deviceName, at, href, linkText }
 // retention: [{ delete_on, images }] จาก api.retentionUpcoming()
 function buildAlerts({ failed = [], devices = [], events = [], retention = [], now = Date.now() }) {
@@ -114,15 +125,15 @@ function buildAlerts({ failed = [], devices = [], events = [], retention = [], n
     });
   }
 
-  // กล้อง / ลำโพงเสีย: จาก device_events ที่ Pi ส่งมา
+  // กล้อง / ลำโพงเสีย / อุณหภูมิสูง / เน็ตหลุด: จาก device_events ที่ Pi ส่งมา (EVENT_ALERTS)
   for (const e of events) {
-    const type = e.type === 'camera_error' ? 'camera' : e.type === 'speaker_error' ? 'speaker' : null;
-    if (!type) continue;
+    const map = Object.hasOwn(EVENT_ALERTS, e.type) ? EVENT_ALERTS[e.type] : null;
+    if (!map) continue;
     const name = e.devices?.name || deviceName[e.device_id] || 'อุปกรณ์';
     alerts.push({
       id: `event:${e.id}`,
-      type,
-      title: type === 'camera' ? `กล้องของ ${name} อ่านภาพไม่สำเร็จ` : `ลำโพงของ ${name} ไม่ทำงาน`,
+      type: map.type,
+      title: map.title(name),
       detail: e.message || '',
       missing: [],
       deviceId: e.device_id,
